@@ -23,3 +23,41 @@ togglePassword.addEventListener("click", function () {
         password.type = "password";
     }
 });
+
+
+ 
+const searchInput = document.getElementById("searchInput");
+const categoryFilter = document.getElementById("categoryFilter");
+const searchBtn = document.getElementById("searchBtn");
+const providerCards = document.querySelectorAll(".provider-card");
+
+searchBtn.addEventListener("click", function () {
+    const searchValue = searchInput.value.toLowerCase().trim();
+    const selectedCategory = categoryFilter.value;
+
+    providerCards.forEach(function (card) {
+        const cardText = card.textContent.toLowerCase();
+        const cardCategory = card.getAttribute("data-category");
+
+        if ((searchValue === "" || cardText.includes(searchValue)) && (selectedCategory === "all" || cardCategory === selectedCategory)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+});
+
+categoryFilter.addEventListener("change", function () {
+    const selectedCategory = categoryFilter.value;
+
+    providerCards.forEach(function (card) {
+        const cardCategory = card.getAttribute("data-category");
+
+        if (selectedCategory === "all" || cardCategory === selectedCategory) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+});
+

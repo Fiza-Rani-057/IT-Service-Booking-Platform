@@ -1,95 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechServe-Login</title>
-    <link rel="stylesheet" href="style.css">
+    <title>TechServe - IT Services</title>
+    <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
-    <div class="container">
-        <!-- LOGIN SECTION -->
-        <div class="login-section">
-            <div class="login-content">
-                <h2>Log In to QuickServe</h2>
-                <p class="subtitle">Sign in to manage your bookings and services</p>
-                <form id="loginForm">
-                    <!-- Email -->
-                    <div class="input-group">
-                        <label for="email">Email Address</label>
-                        <div class="input-box">
-                            <i class="fas fa-envelope"></i>
-                            <input type="email" id="email" placeholder="Enter your email" required>
-                        </div>
-                        <small id="emailError"></small>
-                    </div>
-                    <!-- Password -->
-                    <div class="input-group">
-                        <label for="password">Password</label>
-                        <div class="input-box">
-                            <i class="fas fa-lock"></i>
-                            <input type="password" id="password" placeholder="Enter your password" required>
-                            <i class="fas fa-eye password-eye" id="togglePassword"></i>
-                        </div>
-                        <small id="passwordError"></small>
-                    </div>
-                    <!-- Forgot Password -->
-                    <div class="forgot-row">
-                        <a href="#" class="forgot-pwd">Forgot your password?</a>
-                    </div>
-                    <!-- Login -->
-                    <button type="submit" class="btn-login">
-                        Log In
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
-                    <!-- <button type="submit" class="btn-login">
-                        Log In
-                        <i class="fas fa-arrow-right"></i>
-                    </button> -->
-                </form>
-                <!-- Create Account -->
-                <div class="signup-link">
-                    <span>Don't have an account?</span>
-                    <a href="#">Create Account</a>
-                </div>
-            </div>
+    <header class="navbar">
+        <div class="logo">
+            <i class="fas fa-bolt"></i>
+            Tech<span>Serve</span>
         </div>
-        <!-- WELCOME SECTION -->
-        <div class="welcome-section">
-            <div class="welcome-content">
-                <p class="welcome-small">WELCOME TO QUICKSERVE</p>
-                <h1>Welcome <span>Back!</span></h1>
-                <p class="welcome-description">
-                    Connect with trusted local service providers, book the services you need, and manage your bookings —
-                    all in one place.
-                </p>
-                <!-- Features -->
-                <div class="features">
-                    <div class="feature">
-                        <i class="fas fa-circle-check"></i>
-                        <span>Trusted Service Providers</span>
+        <nav class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="#services">Services</a>
+            <a href="#providers">Providers</a>
+            <a href="dashboard.html">Dashboard</a>
+        </nav>
+        <a href="login.html" class="login-btn">
+            <i class="fas fa-user"></i>
+            Login
+        </a>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <span class="hero-badge">
+                    <i class="fas fa-circle-check"></i>
+                    Trusted IT Service Platform
+                </span>
+                <h1>Find the Right <span>IT Expert</span> for Your Needs</h1>
+                <p>Connect with skilled IT professionals, explore their services, and book reliable experts for your next project.</p>
+                <div class="hero-buttons">
+                    <a href="#providers" class="primary-btn">Explore Services <i class="fas fa-arrow-right"></i></a>
+                    <a href="#services" class="secondary-btn">View Categories</a>
+                </div>
+                <div class="hero-stats">
+                    <div>
+                        <strong>500+</strong>
+                        <span>Professionals</span>
                     </div>
-                    <div class="feature">
-                        <i class="fas fa-circle-check"></i>
-                        <span>Simple & Fast Booking</span>
+                    <div>
+                        <strong>1,200+</strong>
+                        <span>Services</span>
                     </div>
-                    <div class="feature">
-                        <i class="fas fa-circle-check"></i>
-                        <span>Easy Booking Management</span>
+                    <div>
+                        <strong>4.9/5</strong>
+                        <span>Average Rating</span>
                     </div>
                 </div>
             </div>
-            <!-- Footer -->
-            <div class="brand-footer">
-                <i class="fas fa-bolt"></i>
-                QuickServe
+            <div class="hero-visual">
+                <div class="visual-card">
+                    <div class="visual-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Professional IT Services</h3>
+                    <p>Find experts you can trust.</p>
+                    <div class="visual-list">
+                        <div><i class="fas fa-circle-check"></i> Web Development</div>
+                        <div><i class="fas fa-circle-check"></i> Cyber Security</div>
+                        <div><i class="fas fa-circle-check"></i> UI/UX Design</div>
+                    </div>
+                </div>
             </div>
+        </section>
+
+        <section class="search-section">
+            <div class="search-heading">
+                <span>DISCOVER</span>
+                <h2>What service do you need?</h2>
+            </div>
+            <div class="search-container">
+                <div class="search-input">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search services or providers...">
+                </div>
+                <div class="category-select">
+                    <i class="fas fa-layer-group"></i>
+                    <select id="categoryFilter">
+                        <option value="all">All Categories</option>
+                        <option value="web">Web Development</option>
+                        <option value="design">UI/UX Design</option>
+                        <option value="security">Cyber Security</option>
+                        <option value="app">App Development</option>
+                        <option value="support">IT Support</option>
+                    </select>
+                </div>
+                <button class="search-btn" id="searchBtn">Search</button>
+            </div>
+        </section>
+
+        <section class="services-section" id="services">
+            <div class="section-heading">
+                <div>
+                    <span>OUR SERVICES</span>
+                    <h2>Explore IT Categories</h2>
+                </div>
+                <p>Choose the service you need and connect with experienced professionals.</p>
+            </div>
+            <div class="service-categories">
+                <div class="service-category">
+                    <div class="category-icon"><i class="fas fa-code"></i></div>
+                    <h3>Web Development</h3>
+                    <p>Websites & web applications</p>
+                </div>
+                <div class="service-category">
+                    <div class="category-icon"><i class="fas fa-pen-ruler"></i></div>
+                    <h3>UI/UX Design</h3>
+                    <p>Modern digital experiences</p>
+                </div>
+                <div class="service-category">
+                    <div class="category-icon"><i class="fas fa-shield-halved"></i></div>
+                    <h3>Cyber Security</h3>
+                    <p>Protect your digital systems</p>
+                </div>
+                <div class="service-category">
+                    <div class="category-icon"><i class="fas fa-mobile-screen-button"></i></div>
+                    <h3>App Development</h3>
+                    <p>Mobile apps for your business</p>
+                </div>
+                <div class="service-category">
+                    <div class="category-icon"><i class="fas fa-headset"></i></div>
+                    <h3>IT Support</h3>
+                    <p>Technical help & solutions</p>
+                </div>
+            </div>
+        </section>
+        <section class="providers-section" id="providers">
+            <div class="section-heading">
+                <div>
+                    <span>TOP PROFESSIONALS</span>
+                    <h2>Find Trusted Providers</h2>
+                </div>
+                <p>Browse experienced IT professionals available for your service needs.</p>
+            </div>
+            <div class="providers-grid">
+                <article class="provider-card" data-category="web">
+                    <div class="provider-top">
+                        <div class="provider-avatar">AK</div>
+                        <span class="rating"><i class="fas fa-star"></i> 4.9</span>
+                    </div>
+                    <span class="service-tag">Web Development</span>
+                    <h3>Ahmed Khan</h3>
+                    <p class="provider-location"><i class="fas fa-location-dot"></i> Karachi, Pakistan</p>
+                    <p class="experience"><i class="fas fa-briefcase"></i> 5 Years Experience</p>
+                    <div class="provider-footer">
+                        <strong>PKR 5,000+</strong>
+                        <a href="provider.html">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="provider-card" data-category="design">
+                    <div class="provider-top">
+                        <div class="provider-avatar">SA</div>
+                        <span class="rating"><i class="fas fa-star"></i> 4.8</span>
+                    </div>
+                    <span class="service-tag">UI/UX Design</span>
+                    <h3>Sara Ahmed</h3>
+                    <p class="provider-location"><i class="fas fa-location-dot"></i> Lahore, Pakistan</p>
+                    <p class="experience"><i class="fas fa-briefcase"></i> 4 Years Experience</p>
+                    <div class="provider-footer">
+                        <strong>PKR 4,000+</strong>
+                        <a href="provider.html">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="provider-card" data-category="security">
+                    <div class="provider-top">
+                        <div class="provider-avatar">HA</div>
+                        <span class="rating"><i class="fas fa-star"></i> 4.9</span>
+                    </div>
+                    <span class="service-tag">Cyber Security</span>
+                    <h3>Hamza Ali</h3>
+                    <p class="provider-location"><i class="fas fa-location-dot"></i> Islamabad, Pakistan</p>
+                    <p class="experience"><i class="fas fa-briefcase"></i> 6 Years Experience</p>
+                    <div class="provider-footer">
+                        <strong>PKR 7,000+</strong>
+                        <a href="provider.html">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="provider-card" data-category="app">
+                    <div class="provider-top">
+                        <div class="provider-avatar">UR</div>
+                        <span class="rating"><i class="fas fa-star"></i> 4.7</span>
+                    </div>
+                    <span class="service-tag">App Development</span>
+                    <h3>Usman Raza</h3>
+                    <p class="provider-location"><i class="fas fa-location-dot"></i> Karachi, Pakistan</p>
+                    <p class="experience"><i class="fas fa-briefcase"></i> 5 Years Experience</p>
+                    <div class="provider-footer">
+                        <strong>PKR 8,000+</strong>
+                        <a href="provider.html">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="provider-card" data-category="support">
+                    <div class="provider-top">
+                        <div class="provider-avatar">BA</div>
+                        <span class="rating"><i class="fas fa-star"></i> 4.8</span>
+                    </div>
+                    <span class="service-tag">IT Support</span>
+                    <h3>Bilal Ahmed</h3>
+                    <p class="provider-location"><i class="fas fa-location-dot"></i> Rawalpindi, Pakistan</p>
+                    <p class="experience"><i class="fas fa-briefcase"></i> 3 Years Experience</p>
+                    <div class="provider-footer">
+                        <strong>PKR 3,000+</strong>
+                        <a href="provider.html">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="provider-card" data-category="web">
+                    <div class="provider-top">
+                        <div class="provider-avatar">AH</div>
+                        <span class="rating"><i class="fas fa-star"></i> 5.0</span>
+                    </div>
+                    <span class="service-tag">Web Development</span>
+                    <h3>Ali Hassan</h3>
+                    <p class="provider-location"><i class="fas fa-location-dot"></i> Karachi, Pakistan</p>
+                    <p class="experience"><i class="fas fa-briefcase"></i> 7 Years Experience</p>
+                    <div class="provider-footer">
+                        <strong>PKR 6,000+</strong>
+                        <a href="provider.html">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section class="cta-section">
+            <div>
+                <span>READY TO GET STARTED?</span>
+                <h2>Find the right IT expert today.</h2>
+                <p>Book reliable professionals and get your project moving.</p>
+            </div>
+            <a href="#providers" class="primary-btn">Find a Provider <i class="fas fa-arrow-right"></i></a>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-logo">
+            <i class="fas fa-bolt"></i>
+            Tech<span>Serve</span>
         </div>
-    </div>
+        <p>Connecting customers with trusted IT professionals.</p>
+        <p>© 2026 TechServe. All rights reserved.</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
-
 </html>

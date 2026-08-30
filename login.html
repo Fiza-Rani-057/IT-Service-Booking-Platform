@@ -1,0 +1,95 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechServe-Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- LOGIN SECTION -->
+        <div class="login-section">
+            <div class="login-content">
+                <h2>Log In to QuickServe</h2>
+                <p class="subtitle">Sign in to manage your bookings and services</p>
+                <form id="loginForm">
+                    <!-- Email -->
+                    <div class="input-group">
+                        <label for="email">Email Address</label>
+                        <div class="input-box">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" placeholder="Enter your email" required>
+                        </div>
+                        <small id="emailError"></small>
+                    </div>
+                    <!-- Password -->
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <div class="input-box">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" placeholder="Enter your password" required>
+                            <i class="fas fa-eye password-eye" id="togglePassword"></i>
+                        </div>
+                        <small id="passwordError"></small>
+                    </div>
+                    <!-- Forgot Password -->
+                    <div class="forgot-row">
+                        <a href="#" class="forgot-pwd">Forgot your password?</a>
+                    </div>
+                    <!-- Login -->
+                    <button type="submit" class="btn-login">
+                        Log In
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <!-- <button type="submit" class="btn-login">
+                        Log In
+                        <i class="fas fa-arrow-right"></i>
+                    </button> -->
+                </form>
+                <!-- Create Account -->
+                <div class="signup-link">
+                    <span>Don't have an account?</span>
+                    <a href="#">Create Account</a>
+                </div>
+            </div>
+        </div>
+        <!-- WELCOME SECTION -->
+        <div class="welcome-section">
+            <div class="welcome-content">
+                <p class="welcome-small">WELCOME TO QUICKSERVE</p>
+                <h1>Welcome <span>Back!</span></h1>
+                <p class="welcome-description">
+                    Connect with trusted local service providers, book the services you need, and manage your bookings —
+                    all in one place.
+                </p>
+                <!-- Features -->
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-circle-check"></i>
+                        <span>Trusted Service Providers</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-circle-check"></i>
+                        <span>Simple & Fast Booking</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-circle-check"></i>
+                        <span>Easy Booking Management</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer -->
+            <div class="brand-footer">
+                <i class="fas fa-bolt"></i>
+                QuickServe
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
