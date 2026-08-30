@@ -10,8 +10,6 @@ loginForm.addEventListener("submit", function (event) {
     } else if (password.value.trim() === "") {
         alert("Please enter your password");
     } else {
-        alert("Login successful!");
-
           window.location.href = "dashboard.html";
     }
 });
