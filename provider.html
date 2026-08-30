@@ -1,0 +1,168 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechServe - Provider Profile</title>
+    <link rel="stylesheet" href="provider.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <i class="fas fa-bolt"></i>
+            Tech<span>Serve</span>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#services">Services</a>
+            <a href="index.html#providers" class="active">Providers</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <a href="login.html" class="login-btn">
+            <i class="fas fa-user"></i>
+            Login
+        </a>
+    </header>
+
+    <main class="profile-page">
+        <a href="index.html#providers" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+            Back to Providers
+        </a>
+
+        <section class="profile-card">
+            <div class="profile-top">
+                <div class="profile-avatar" id="profileAvatar"></div>
+
+                <div class="profile-main">
+                    <span class="verified">
+                        <i class="fas fa-circle-check"></i>
+                        Verified Provider
+                    </span>
+
+                    <h1 id="providerName"></h1>
+                    <p id="providerService"></p>
+
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <strong id="providerRating"></strong>
+                        <span>Customer Rating</span>
+                    </div>
+                </div>
+
+                <span class="available">
+                    Available
+                </span>
+            </div>
+
+            <div class="profile-content">
+                <div class="details-section">
+                    <h2>Provider Details</h2>
+
+                    <p>
+                        Connect with this trusted professional and book
+                        the service you need through TechServe.
+                    </p>
+
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <i class="fas fa-location-dot"></i>
+                            <div>
+                                <span>Location</span>
+                                <strong id="providerLocation"></strong>
+                            </div>
+                        </div>
+
+                        <div class="detail-item">
+                            <i class="fas fa-briefcase"></i>
+                            <div>
+                                <span>Experience</span>
+                                <strong id="providerExperience"></strong>
+                            </div>
+                        </div>
+
+                        <div class="detail-item">
+                            <i class="fas fa-money-bill"></i>
+                            <div>
+                                <span>Starting Price</span>
+                                <strong id="providerPrice"></strong>
+                            </div>
+                        </div>
+
+                        <div class="detail-item">
+                            <i class="fas fa-star"></i>
+                            <div>
+                                <span>Rating</span>
+                                <strong id="providerRatingDetail"></strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2>Service</h2>
+
+                    <div class="service-box">
+                        <i class="fas fa-briefcase"></i>
+                        <span id="providerServiceDetail"></span>
+                    </div>
+                </div>
+
+                <aside class="booking-box">
+                    <div class="booking-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+
+                    <h2>Need This Service?</h2>
+
+                    <p>
+                        Book this provider and get your service request
+                        started.
+                    </p>
+
+                    <div class="price-box">
+                        <span>Starting from</span>
+                        <strong id="bookingPrice"></strong>
+                    </div>
+
+                    <a href="booking.html" class="book-btn">
+                        Book Service
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <i class="fas fa-bolt"></i>
+                    Tech<span>Serve</span>
+                </div>
+                <p>Connecting customers with trusted IT professionals.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#providers">Providers</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 TechServe. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="provider.js"></script>
+</body>
+</html>

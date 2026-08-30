@@ -10,9 +10,7 @@ body {
 
 .container {
     min-height: 100vh;
-
     display: grid;
-
     grid-template-columns: 1fr 1fr;
 
 }
@@ -174,7 +172,7 @@ body {
 
 .btn-login i {
     transition: 0.3s;
-       text-decoration: none;
+    text-decoration: none;
 }
 
 .btn-login:hover {
@@ -248,10 +246,11 @@ body {
     }
 
 }
-  /* Welcome Section  */
+
+/* Welcome Section  */
 .welcome-section {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-     background:#161c29;
+    background: #161c29;
 }
 
 .welcome-small {
@@ -262,6 +261,7 @@ body {
     letter-spacing: 2px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 .welcome-content h1 {
     margin-bottom: 22px;
     font-size: clamp(45px, 5vw, 50px);

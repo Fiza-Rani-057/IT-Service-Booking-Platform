@@ -1,0 +1,153 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechServe - Book Service</title>
+    <link rel="stylesheet" href="booking.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <i class="fas fa-bolt"></i>
+            Tech<span>Serve</span>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#services">Services</a>
+            <a href="provider.html">Providers</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <a href="dashboard.html" class="login-btn">
+            <i class="fas fa-user"></i>
+            Dashboard
+        </a>
+    </header>
+
+    <main class="booking-page">
+        <div class="booking-header">
+            <a href="provider.html" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Back to Provider
+            </a>
+            <h1>Book a Service</h1>
+            <p>Fill in the details below to submit your booking request.</p>
+        </div>
+
+        <section class="booking-card">
+            <form id="bookingForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="service">
+                            <i class="fas fa-briefcase"></i>
+                            Service
+                        </label>
+                        <select id="service" required>
+                            <option value="">Select Service</option>
+                            <option value="Web Development">Web Development</option>
+                            <option value="UI/UX Design">UI/UX Design</option>
+                            <option value="Graphic Design">Graphic Design</option>
+                            <option value="Mobile App Development">Mobile App Development</option>
+                            <option value="Digital Marketing">Digital Marketing</option>
+                            <option value="IT Support">IT Support</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">
+                            <i class="fas fa-calendar"></i>
+                            Date
+                        </label>
+                        <input type="date" id="date" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="time">
+                            <i class="fas fa-clock"></i>
+                            Time
+                        </label>
+                        <input type="time" id="time" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">
+                            <i class="fas fa-location-dot"></i>
+                            Location
+                        </label>
+                        <input type="text" id="location" placeholder="Enter service location" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">
+                        <i class="fas fa-align-left"></i>
+                        Service Description
+                    </label>
+                    <textarea id="description" rows="6" placeholder="Describe what service you need..." required></textarea>
+                </div>
+
+                <div class="booking-info">
+                    <i class="fas fa-circle-info"></i>
+                    <div>
+                        <strong>Booking Information</strong>
+                        <p>A unique booking ID will be generated after submitting your request.</p>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    Submit Booking
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </form>
+
+            <div id="bookingSuccess" class="success-box">
+                <i class="fas fa-circle-check"></i>
+                <h2>Booking Submitted!</h2>
+                <p>Your booking request has been submitted successfully.</p>
+                <div class="booking-id">
+                    Booking ID: <strong id="bookingId"></strong>
+                </div>
+                <a href="dashboard.html" class="dashboard-btn">
+                    Go to Dashboard
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <i class="fas fa-bolt"></i>
+                    Tech<span>Serve</span>
+                </div>
+                <p>Connecting customers with trusted IT professionals.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#services">Services</a>
+                <a href="provider.html">Providers</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 TechServe. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="booking.js"></script>
+</body>
+</html>
+

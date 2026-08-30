@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -64,13 +63,13 @@ a {
     font-size: 18px;
     font-weight: 500;
     transition: all 0.3s ease;
-     text-shadow: 0px 0px 15px #144a95;
+    text-shadow: 0px 0px 15px #144a95;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
     color: #2aace3;
-   
+
 }
 
 .login-btn {
@@ -171,7 +170,7 @@ a {
     color: #ffffff;
     border: 2px solid #144a95;
     font-size: 15px;
-     box-shadow: 0 1px 5px #51b6e1;
+    box-shadow: 0 1px 5px #51b6e1;
 }
 
 .primary-btn:hover {
@@ -229,7 +228,7 @@ a {
     background: #1a3b6a;
     box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(8px);
-      box-shadow: 0px 0px 20px #18385d;
+    box-shadow: 0px 0px 20px #18385d;
 }
 
 .visual-icon {
@@ -251,7 +250,7 @@ a {
     font-size: 25px;
 }
 
-.visual-card > p {
+.visual-card>p {
     margin-bottom: 22px;
     color: #f5f7fa;
     font-size: 15px;
@@ -390,7 +389,7 @@ a {
 
 .section-heading span {
     color: #2563eb;
-    font-size: 11px;
+    font-size: 15px;
     font-weight: 700;
     letter-spacing: 1.7px;
 }
@@ -398,12 +397,12 @@ a {
 .section-heading h2 {
     margin-top: 6px;
     color: #172033;
-    font-size: 30px;
+    font-size: 35px;
 }
 
 .section-heading p {
     max-width: 430px;
-    color: #64748b;
+    color: #1d4075;
     font-size: 13px;
     line-height: 1.7;
 }
@@ -412,7 +411,7 @@ a {
 
 .services-section {
     padding: 75px 7%;
-    background: #f4f8fc;
+    background: #deebf8;
 }
 
 .service-categories {
@@ -420,24 +419,24 @@ a {
     margin: auto;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 18px;
+    gap: 20px;
 }
 
 .service-category {
     padding: 25px 18px;
     text-align: center;
-    border: 1px solid #d9e4f0;
+    border: 1px solid #1859a0;
     border-radius: 13px;
     background: #ffffff;
-    box-shadow: 0 7px 18px rgba(37, 99, 235, 0.05);
+    box-shadow: 0 0px 8px #6fa9ef;
     transition: all 0.3s ease;
 }
 
 .service-category:hover {
     transform: translateY(-7px);
-    border-color: #93c5fd;
+    border-color: #0e3665;
     background: #f8fbff;
-    box-shadow: 0 13px 28px rgba(37, 99, 235, 0.12);
+    box-shadow: 0 13px 20px #6c9ad2;
 }
 
 .category-icon {
@@ -462,12 +461,12 @@ a {
 .service-category h3 {
     margin-bottom: 6px;
     color: #172033;
-    font-size: 15px;
+    font-size: 18px;
 }
 
 .service-category p {
-    color: #64748b;
-    font-size: 11px;
+    color: #385071;
+    font-size: 13px;
     line-height: 1.5;
 }
 
@@ -488,18 +487,18 @@ a {
 
 .provider-card {
     padding: 24px;
-    border: 1px solid #d9e4f0;
+    border: 1px solid #639ddc;
     border-radius: 15px;
     background: #ffffff;
-    box-shadow: 0 7px 20px rgba(37, 99, 235, 0.06);
+    box-shadow: 0 0px 10px #6397e0;
     transition: all 0.3s ease;
 }
 
 .provider-card:hover {
     transform: translateY(-7px);
-    border-color: #93c5fd;
+    border-color: #0d3f78;
     background: #f8fbff;
-    box-shadow: 0 14px 30px rgba(37, 99, 235, 0.13);
+    box-shadow: 0 1px 20px #5ca0f4;
 }
 
 .provider-top {
@@ -541,14 +540,14 @@ a {
 .provider-card h3 {
     margin-bottom: 7px;
     color: #172033;
-    font-size: 17px;
+    font-size: 20px;
 }
 
 .provider-location,
 .experience {
     margin-top: 5px;
-    color: #64748b;
-    font-size: 11px;
+    color: #184687;
+    font-size: 14px;
 }
 
 .provider-location i,
@@ -563,7 +562,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-top: 1px solid #e5edf5;
+    border-top: 1px solid #3878b8;
 }
 
 .provider-footer strong {
@@ -575,11 +574,12 @@ a {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    color: #2563eb;
+    color: #0b2763;
     font-size: 12px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
+    font-size: 15px;
 }
 
 .provider-footer a:hover {
@@ -595,17 +595,17 @@ a {
     align-items: center;
     justify-content: space-between;
     gap: 30px;
-    background: #eaf2fa;
-    border-top: 1px solid #dce8f3;
+    background: #c4dcf4;
+    border-top: 1px solid #174c7e;
 }
 
-.cta-section > div {
+.cta-section>div {
     max-width: 700px;
 }
 
 .cta-section span {
     color: #2563eb;
-    font-size: 11px;
+    font-size: 15px;
     font-weight: 700;
     letter-spacing: 1.7px;
 }
@@ -613,16 +613,17 @@ a {
 .cta-section h2 {
     margin: 7px 0;
     color: #172033;
-    font-size: 29px;
+    font-size: 35px;
 }
 
 .cta-section p {
-    color: #64748b;
-    font-size: 13px;
+    color: #204578;
+    font-size: 15px;
 }
 
 .cta-section .primary-btn {
     flex-shrink: 0;
+    background-color: #0c2b50;
 }
 
 /* FOOTER */
@@ -661,7 +662,7 @@ a {
 
 .footer-brand p {
     margin-top: 8px;
-    color: #94a3b8;
+    color: #c7d1e1;
     font-size: 12px;
 }
 
@@ -672,7 +673,7 @@ a {
 }
 
 .footer-links a {
-    color: #94a3b8;
+    color: #d5dde9;
     font-size: 13px;
     transition: all 0.3s ease;
 }
@@ -694,27 +695,28 @@ a {
     justify-content: center;
     border: 1px solid #294866;
     border-radius: 50%;
-    color: #94a3b8;
+    color: #0c1e38;
     transition: all 0.3s ease;
+    background-color: #becee2;
 }
 
 .footer-social a:hover {
-    color: #38bdf8;
+    color: #0d4f6b;
     border-color: #38bdf8;
-    background: #102a4a;
+    background: #71aaef;
     transform: translateY(-3px);
 }
 
 .footer-bottom {
     margin-top: 32px;
     padding-top: 18px;
-    border-top: 1px solid #18385d;
+    border-top: 1px solid #3e72ae;
     text-align: center;
 }
 
 .footer-bottom p {
-    color: #64748b;
-    font-size: 11px;
+    color: #c6d4e6;
+    font-size: 15px;
 }
 
 /* TABLET */
@@ -871,4 +873,3 @@ a {
         font-size: 25px;
     }
 }
-
