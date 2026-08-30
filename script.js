@@ -13,7 +13,6 @@ loginForm.addEventListener("submit", function (event) {
           window.location.href = "dashboard.html";
     }
 });
-
 togglePassword.addEventListener("click", function () {
     if (password.type === "password") {
         password.type = "text";

@@ -263,8 +263,6 @@ body {
     letter-spacing: 2px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
-
 .welcome-content h1 {
     margin-bottom: 22px;
     font-size: clamp(45px, 5vw, 50px);

@@ -65,7 +65,6 @@ a {
     font-weight: 500;
     transition: 0.3s;
 }
-
 .nav-links a:hover,
 .nav-links a.active {
     color: #38bdf8;
