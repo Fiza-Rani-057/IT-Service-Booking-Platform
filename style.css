@@ -170,10 +170,12 @@ body {
     font-weight: 700;
     cursor: pointer;
     transition: 0.3s;
+    text-decoration: none;
 }
 
 .btn-login i {
     transition: 0.3s;
+       text-decoration: none;
 }
 
 .btn-login:hover {
