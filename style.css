@@ -252,6 +252,7 @@ body {
   /* Welcome Section  */
 .welcome-section {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     background:#161c29;
 }
 
 .welcome-small {

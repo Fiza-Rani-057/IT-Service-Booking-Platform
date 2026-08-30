@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    background:#172033;
+    background:#161c29;
     color: #f4f5f6;
     line-height: 1.6;
 }
@@ -696,4 +696,119 @@ a {
         width: 90%;
         padding: 30px 22px;
     }
+}
+ .footer {
+    margin-top: 70px;
+    padding: 35px 7% 20px;
+    background: #071426;
+    border-top: 1px solid #18385d;
+}
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-brand p {
+    margin-top: 7px;
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+.footer-logo {
+    color: #ffffff;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.footer-logo i {
+    color: #38bdf8;
+    margin-right: 6px;
+}
+
+.footer-logo span {
+    color: #38bdf8;
+}
+
+.footer-links {
+    display: flex;
+    gap: 25px;
+}
+
+.footer-links a {
+    color: #94a3b8;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #38bdf8;
+}
+
+.footer-social {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-social a {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #294866;
+    border-radius: 50%;
+    color: #94a3b8;
+    transition: 0.3s;
+}
+
+.footer-social a:hover {
+    color: #38bdf8;
+    border-color: #38bdf8;
+}
+
+.footer-bottom {
+    margin-top: 25px;
+    padding-top: 18px;
+    border-top: 1px solid #18385d;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #64748b;
+    font-size: 12px;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.btn-hover:hover {
+    background: #2a86c3;
+    color: #2563eb;
+    border-color: #93c5fd;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px white;
+}
+.login-btn{
+    padding: 8px 25px;
+}
+.box-shadow {
+    box-shadow: 0 8px 20px white;
+    transition: all 0.3s ease;
+}
+
+.box-shadow:hover {
+    box-shadow: 0 12px 28px rgba(251, 251, 252, 0.22);
+    transform: translateY(-3px);
 }

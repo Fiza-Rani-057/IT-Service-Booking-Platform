@@ -1,11 +1,310 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>TechServe - Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-    
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <i class="fas fa-bolt"></i>
+                Tech<span>Serve</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#overview" class="sidebar-link active">
+                    <i class="fas fa-chart-pie"></i>
+                    <span>Overview</span>
+                </a>
+                <a href="#bookings" class="sidebar-link">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>My Bookings</span>
+                </a>
+                <a href="index.html" class="sidebar-link">
+                    <i class="fas fa-search"></i>
+                    <span>Find Services</span>
+                </a>
+                <a href="#reviews" class="sidebar-link">
+                    <i class="fas fa-star"></i>
+                    <span>My Reviews</span>
+                </a>
+                <a href="#profile" class="sidebar-link">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <a href="index.html" class="sidebar-link">
+                    <i class="fas fa-house"></i>
+                    <span>Back to Home</span>
+                </a>
+                <a href="login.html" class="sidebar-link logout">
+                    <i class="fas fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="dashboard-main">
+
+            <!-- TOPBAR -->
+            <header class="dashboard-header">
+                <div>
+                    <p class="header-small">CUSTOMER DASHBOARD</p>
+                    <h1>Welcome back, Fahad!</h1>
+                    <p>Manage your services and bookings from here.</p>
+                </div>
+
+                <div class="header-actions">
+                    <button class="notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span>2</span>
+                    </button>
+
+                    <div class="user-profile">
+                        <div class="user-avatar">FS</div>
+                        <div>
+                            <strong>Fahad Saeed</strong>
+                            <small>Customer</small>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- OVERVIEW -->
+            <section class="dashboard-section" id="overview">
+                <div class="section-title">
+                    <div>
+                        <span>OVERVIEW</span>
+                        <h2>Your Activity</h2>
+                    </div>
+                    <a href="index.html" class="action-btn">
+                        <i class="fas fa-plus"></i>
+                        Book a Service
+                    </a>
+                </div>
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+                        <div class="stat-icon blue">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div>
+                            <span>Total Bookings</span>
+                            <h3>12</h3>
+                            <small>All time bookings</small>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon orange">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <span>Pending</span>
+                            <h3>3</h3>
+                            <small>Awaiting service</small>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon green">
+                            <i class="fas fa-circle-check"></i>
+                        </div>
+                        <div>
+                            <span>Completed</span>
+                            <h3>8</h3>
+                            <small>Services completed</small>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon purple">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div>
+                            <span>Reviews</span>
+                            <h3>6</h3>
+                            <small>Your submitted reviews</small>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BOOKINGS -->
+            <section class="dashboard-section" id="bookings">
+                <div class="section-title">
+                    <div>
+                        <span>BOOKINGS</span>
+                        <h2>Recent Bookings</h2>
+                    </div>
+                    <button class="view-btn">View All</button>
+                </div>
+
+                <div class="booking-table">
+
+                    <div class="booking-row booking-heading">
+                        <span>Service</span>
+                        <span>Provider</span>
+                        <span>Date</span>
+                        <span>Status</span>
+                        <span>Action</span>
+                    </div>
+
+                    <div class="booking-row">
+                        <div class="service-name">
+                            <div class="table-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div>
+                                <strong>Web Development</strong>
+                                <small>Business Website</small>
+                            </div>
+                        </div>
+                        <span>Ahmed Khan</span>
+                        <span>28 Aug 2026</span>
+                        <span class="status pending">Pending</span>
+                        <button class="table-action">View</button>
+                    </div>
+
+                    <div class="booking-row">
+                        <div class="service-name">
+                            <div class="table-icon">
+                                <i class="fas fa-pen-ruler"></i>
+                            </div>
+                            <div>
+                                <strong>UI/UX Design</strong>
+                                <small>Mobile App Design</small>
+                            </div>
+                        </div>
+                        <span>Sara Ahmed</span>
+                        <span>24 Aug 2026</span>
+                        <span class="status completed">Completed</span>
+                        <button class="table-action">View</button>
+                    </div>
+
+                    <div class="booking-row">
+                        <div class="service-name">
+                            <div class="table-icon">
+                                <i class="fas fa-shield-halved"></i>
+                            </div>
+                            <div>
+                                <strong>Cyber Security</strong>
+                                <small>Security Audit</small>
+                            </div>
+                        </div>
+                        <span>Hamza Ali</span>
+                        <span>20 Aug 2026</span>
+                        <span class="status completed">Completed</span>
+                        <button class="table-action">View</button>
+                    </div>
+
+                    <div class="booking-row">
+                        <div class="service-name">
+                            <div class="table-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div>
+                                <strong>IT Support</strong>
+                                <small>Technical Support</small>
+                            </div>
+                        </div>
+                        <span>Bilal Ahmed</span>
+                        <span>18 Aug 2026</span>
+                        <span class="status cancelled">Cancelled</span>
+                        <button class="table-action">View</button>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- QUICK ACTIONS -->
+            <section class="dashboard-section">
+                <div class="section-title">
+                    <div>
+                        <span>QUICK ACTIONS</span>
+                        <h2>What would you like to do?</h2>
+                    </div>
+                </div>
+
+                <div class="quick-actions">
+                    <a href="index.html" class="quick-card">
+                        <div class="quick-icon">
+                            <i class="fas fa-magnifying-glass"></i>
+                        </div>
+                        <div>
+                            <h3>Find a Service</h3>
+                            <p>Explore IT professionals</p>
+                        </div>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                    <a href="#bookings" class="quick-card">
+                        <div class="quick-icon">
+                            <i class="fas fa-calendar-plus"></i>
+                        </div>
+                        <div>
+                            <h3>Manage Bookings</h3>
+                            <p>View your appointments</p>
+                        </div>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                    <a href="#reviews" class="quick-card">
+                        <div class="quick-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div>
+                            <h3>Write a Review</h3>
+                            <p>Share your experience</p>
+                        </div>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </section>
+
+            <!-- PROFILE -->
+            <section class="dashboard-section profile-section" id="profile">
+                <div class="section-title">
+                    <div>
+                        <span>ACCOUNT</span>
+                        <h2>Your Profile</h2>
+                    </div>
+                    <button class="edit-btn">
+                        <i class="fas fa-pen"></i>
+                        Edit Profile
+                    </button>
+                </div>
+                <div class="profile-card">
+                    <div class="profile-avatar">FS</div>
+                    <div class="profile-info">
+                        <h3>John Deo</h3>
+                        <p><i class="fas fa-envelope"></i> john@example.com</p>
+                        <p><i class="fas fa-phone"></i> +92 300 1234567</p>
+                    </div>
+                </div>
+            </section>
+            <!-- FOOTER -->
+            <footer class="dashboard-footer">
+                <p>© 2026 TechServe. All rights reserved.</p>
+                <a href="index.html">Back to Home</a>
+            </footer>
+        </main>
+    </div>
+    <script src="dashboard.js"></script>
 </body>
+
 </html>
+```
