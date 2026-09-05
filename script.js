@@ -1,15 +1,13 @@
-// Section Navigation Toggle Function
 function showSection(sectionId) {
     const sections = document.querySelectorAll("body > section");
 
-    sections.forEach(function (section) {
+    sections.forEach(function(section) {
         section.style.display = "none";
     });
 
     const targetSection = document.getElementById(sectionId);
 
     if (targetSection) {
-        // Auth sections (Login / Signup) rely on Flexbox split screen
         if (sectionId === "login" || sectionId === "signup") {
             targetSection.style.display = "flex";
         } else {
@@ -18,20 +16,18 @@ function showSection(sectionId) {
     }
 }
 
-// Ensure DOM elements exist before adding listeners
-document.addEventListener("DOMContentLoaded", function () {
-    
-    // Default initial view
+document.addEventListener("DOMContentLoaded", function() {
+
     showSection("login");
 
-    // --- LOGIN LOGIC ---
+    // Login
     const loginForm = document.getElementById("loginForm");
     const email = document.getElementById("email");
     const password = document.getElementById("password");
     const togglePassword = document.getElementById("togglePassword");
 
     if (loginForm) {
-        loginForm.addEventListener("submit", function (event) {
+        loginForm.addEventListener("submit", function(event) {
             event.preventDefault();
 
             const emailVal = email.value.trim();
@@ -46,34 +42,34 @@ document.addEventListener("DOMContentLoaded", function () {
             } else if (emailVal === "customer@gmail.com" && passVal === "customer123") {
                 alert("Customer Login Successful!");
                 loginForm.reset();
-                showSection("dashboard");
+                showSection("home");
             } else if (emailVal === "provider@gmail.com" && passVal === "provider123") {
                 alert("Provider Login Successful!");
                 loginForm.reset();
-                showSection("provider");
+                showSection("home");
             } else {
                 alert("Invalid email or password. Please try again.");
             }
         });
     }
 
-    // Toggle Password Visibility with Icon Switch
+    // Password Show/Hide
     if (togglePassword && password) {
-        togglePassword.addEventListener("click", function () {
+        togglePassword.addEventListener("click", function() {
             const isPassword = password.type === "password";
+
             password.type = isPassword ? "text" : "password";
 
-            // Switch FontAwesome Eye Icon Class
             this.classList.toggle("fa-eye", !isPassword);
             this.classList.toggle("fa-eye-slash", isPassword);
         });
     }
 
-    // --- SIGNUP LOGIC ---
+    // Sign Up
     const signupForm = document.getElementById("signupForm");
 
     if (signupForm) {
-        signupForm.addEventListener("submit", function (event) {
+        signupForm.addEventListener("submit", function(event) {
             event.preventDefault();
 
             const name = document.getElementById("signupName").value.trim();
@@ -98,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             alert("Account created successfully!");
             signupForm.reset();
-            showSection("login");
+            showSection("home");
         });
     }
 });
