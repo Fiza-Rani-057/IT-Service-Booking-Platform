@@ -1,4 +1,4 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -22,7 +22,7 @@ a {
 }
 
 /* NAVBAR */
-
+/* 
 .navbar {
     width: 100%;
     min-height: 75px;
@@ -90,11 +90,11 @@ a {
     background: #3b82f6;
     transform: translateY(-2px);
     box-shadow: 0 8px 18px rgba(63, 123, 252, 0.2);
-}
+} */
 
 /* HERO */
 
-.hero {
+/* .hero {
     min-height: 570px;
     padding: 80px 7%;
     display: flex;
@@ -212,10 +212,10 @@ a {
 .hero-stats span {
     color: #94a3b8;
     font-size: 11px;
-}
+} */
 
 /* HERO VISUAL */
-
+/* 
 .hero-visual {
     width: 390px;
     flex-shrink: 0;
@@ -275,7 +275,7 @@ a {
 }
 
 /* SEARCH */
-
+/* 
 .search-section {
     padding: 60px 7%;
     background: #ffffff;
@@ -374,10 +374,10 @@ a {
     background: #4b70be;
     transform: translateY(-2px);
     box-shadow: 0 7px 15px rgba(37, 99, 235, 0.18);
-}
+} */
 
 /* SECTION HEADING */
-
+/* 
 .section-heading {
     max-width: 1150px;
     margin: 0 auto 35px;
@@ -409,12 +409,12 @@ a {
 
 /* SERVICES */
 
-.services-section {
+/* .services-section {
     padding: 75px 7%;
-    background: #deebf8;
-}
+    background: #deebf8; 
+} */
 
-.service-categories {
+/* .service-categories {
     max-width: 1150px;
     margin: auto;
     display: grid;
@@ -468,10 +468,10 @@ a {
     color: #385071;
     font-size: 13px;
     line-height: 1.5;
-}
+}  */
 
 /* PROVIDERS */
-
+/* 
 .providers-section {
     padding: 75px 7%;
     background: #ffffff;
@@ -519,7 +519,7 @@ a {
     color: #2563eb;
     font-size: 16px;
     font-weight: 700;
-}
+} 
 
 .rating {
     color: #f59e0b;
@@ -585,10 +585,10 @@ a {
 .provider-footer a:hover {
     color: #38bdf8;
     transform: translateX(4px);
-}
+} */
 
 /* CTA */
-
+/* 
 .cta-section {
     padding: 65px 7%;
     display: flex;
@@ -627,7 +627,7 @@ a {
 }
 
 /* FOOTER */
-
+/* 
 .footer {
     padding: 45px 7% 20px;
     background: #071426;
@@ -705,7 +705,7 @@ a {
     border-color: #38bdf8;
     background: #71aaef;
     transform: translateY(-3px);
-}
+} 
 
 .footer-bottom {
     margin-top: 32px;
@@ -720,7 +720,7 @@ a {
 }
 
 /* TABLET */
-
+/* 
 @media (max-width: 1000px) {
     .hero {
         padding: 70px 5%;
@@ -741,10 +741,10 @@ a {
     .providers-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-}
+}  */
 
 /* MOBILE */
-
+/* 
 @media (max-width: 750px) {
     .navbar {
         padding: 15px 5%;
@@ -821,7 +821,7 @@ a {
 
 /* SMALL MOBILE */
 
-@media (max-width: 480px) {
+ /*@media (max-width: 480px) {
     .logo {
         font-size: 21px;
     }
@@ -872,4 +872,4 @@ a {
     .cta-section h2 {
         font-size: 25px;
     }
-}
+} */ 
