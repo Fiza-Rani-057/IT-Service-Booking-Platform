@@ -375,6 +375,8 @@ body {
     justify-content: space-between;
     gap: 50px;
     background: linear-gradient(135deg, #022761, #161C29);
+    /* background-color:#021235; */
+
 }
 
 .hero-content {
@@ -462,8 +464,8 @@ body {
     /* box-shadow: 0 20px 45px rgba(14, 71, 164, 0.18); */
 }
 .hero-card img{
-    width: 25rem;
-    height: 100%;
+    width: 35rem;
+    height: 25rem;
     margin-bottom: 5%;
 }
 /* Tablet */
