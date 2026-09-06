@@ -294,7 +294,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #161C29;
+    background: #131f38;
+    backdrop-filter: blur(20px)
 }
 
 .home-logo {
@@ -339,9 +340,9 @@ body {
 }
 
 .home-buttons button {
-    padding: 10px 18px;
+    padding: 10px 20px;
     border-radius: 7px;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 700;
     cursor: pointer;
     transition: 0.3s;
@@ -349,27 +350,27 @@ body {
 
 .home-buttons button:first-child {
     background: transparent;
-    border: 1px solid #22D3EE;
-    color: #22D3EE;
+    border: 1px solid white;
+    color: white;
 }
 
 .home-buttons button:last-child {
-    background: #22D3EE;
-    border: 1px solid #22D3EE;
-    color: #022761;
+    background: #012e76;
+    border: 1px solid #012e76;
+    color:white;
 }
 
 .home-buttons button:first-child:hover,
 .home-buttons button:last-child:hover {
-    background: #22D3EE;
-    color: #022761;
+    background: #0749b3;
+    color: white;
     transform: translateY(-2px);
 }
 
 /* Hero Section */
 .home-hero {
     min-height: 570px;
-    padding: 70px 8%;
+    padding: 60px 8%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -382,8 +383,8 @@ body {
     max-width: 600px;
 }
 
-.hero-small {
-    margin-bottom: 15px;
+.hero-content .hero-small {
+    margin-bottom: 10px;
     color:#22D3EE;
     font-size: 12px;
     font-weight: 800;
@@ -393,7 +394,7 @@ body {
 .hero-content h1 {
     margin-bottom: 20px;
     color: #eceef2;
-    font-size: clamp(40px, 5vw, 60px);
+    font-size: clamp(40px, 5vw, 55px);
     line-height: 1.1;
 }
 
@@ -458,13 +459,11 @@ body {
     width: 50%;
     padding: 35px;
     border-radius: 18px;
-    /* background: #161C29; */
     color: #FFFFFF;
-    /* box-shadow: 0 20px 45px rgba(14, 71, 164, 0.18); */
 }
 .hero-card img{
     width: 35rem;
-    height: 25rem;
+    height: 20rem;
     margin-bottom: 5%;
 }
 /* Tablet */
