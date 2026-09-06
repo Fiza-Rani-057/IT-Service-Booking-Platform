@@ -374,8 +374,7 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 50px;
-    background: linear-gradient(135deg, #022761, #161C29);
-    /* background-color:#021235; */
+    background: linear-gradient(135deg, #012e76, #161C29);
 
 }
 
@@ -385,7 +384,7 @@ body {
 
 .hero-small {
     margin-bottom: 15px;
-    color: #22D3EE;
+    color:#22D3EE;
     font-size: 12px;
     font-weight: 800;
     letter-spacing: 2px;
@@ -421,7 +420,7 @@ body {
     padding: 14px 22px;
     border: none;
     border-radius: 8px;
-    background: #022761;
+    background: #03327e;
     color: #FFFFFF;
     font-size: 14px;
     font-weight: 700;
@@ -430,7 +429,7 @@ body {
 }
 
 .hero-primary:hover {
-    background: #0b3d8d;
+    background: #0958d6;
     transform: translateY(-2px);
 }
 
@@ -450,7 +449,7 @@ body {
 }
 
 .hero-secondary:hover {
-    background: #10346d;
+    background: #0d46a1;
     color: #FFFFFF;
 }
 

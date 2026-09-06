@@ -40,11 +40,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 alert("Please enter your password.");
                 password.focus();
             } else if (emailVal === "customer@gmail.com" && passVal === "customer123") {
-                alert("Customer Login Successful!");
+                // alert("Customer Login Successful!");
                 loginForm.reset();
                 showSection("home");
             } else if (emailVal === "provider@gmail.com" && passVal === "provider123") {
-                alert("Provider Login Successful!");
+                // alert("Provider Login Successful!");
                 loginForm.reset();
                 showSection("home");
             } else {
