@@ -14,13 +14,11 @@ function showSection(sectionId){
             targetSection.style.display="block";
         }
     }
-
     window.scrollTo({
         top:0,
         behavior:"smooth"
     });
 }
-
 document.addEventListener("DOMContentLoaded",function(){
 
     showSection("login");

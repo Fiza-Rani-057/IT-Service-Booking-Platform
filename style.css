@@ -1827,6 +1827,7 @@ tbody tr:hover {
         padding: 28px 20px;
     }
 }
+
 .bookings-heading>div>span {
     background: #e6f9fc;
     color: #0891b2;
@@ -1840,38 +1841,49 @@ tbody tr:hover {
 #providerDashboard {
     background: #f4f8fb;
 }
+
 #providerDashboard .dashboard-header {
     margin-bottom: 40px;
 }
+
 #providerDashboard .dashboard-label {
     color: #06b6d4;
 }
+
 #providerDashboard .dashboard-header h1 {
     color: #092f5f;
 }
+
 #providerDashboard .dashboard-header h1 span {
     color: #06b6d4;
 }
+
 #providerDashboard .stat-card {
     background: #fff;
     border: 1px solid #dce7ee;
 }
+
 #providerDashboard .stat-card span {
     color: #64748b;
 }
+
 #providerDashboard .stat-card h2 {
     color: #092f5f;
 }
+
 #providerDashboard .bookings-card {
     background: #fff;
     border: 1px solid #dce7ee;
 }
+
 #providerDashboard .bookings-heading h2 {
     color: #092f5f;
 }
+
 #providerDashboard .bookings-heading p {
     color: #64748b;
 }
+
 #providerDashboard #providerBookingCount {
     background: #e6f9fc;
     color: #0891b2;
@@ -1881,14 +1893,17 @@ tbody tr:hover {
     font-weight: 600;
     white-space: nowrap;
 }
+
 #providerDashboard table {
     width: 100%;
     border-collapse: collapse;
     min-width: 950px;
 }
+
 #providerDashboard thead {
     background: #092f5f;
 }
+
 #providerDashboard th {
     padding: 15px;
     text-align: left;
@@ -1896,20 +1911,24 @@ tbody tr:hover {
     font-size: 13px;
     font-weight: 600;
 }
+
 #providerDashboard td {
     padding: 18px 15px;
     color: #334155;
     font-size: 14px;
     border-bottom: 1px solid #e8eef2;
 }
+
 #providerDashboard tbody tr:hover {
     background: #f2fbfd;
 }
+
 #providerDashboard .empty-booking {
     text-align: center;
     padding: 45px;
     color: #94a3b8;
 }
+
 #providerDashboard .status {
     display: inline-block;
     padding: 6px 12px;
@@ -1917,26 +1936,32 @@ tbody tr:hover {
     font-size: 12px;
     font-weight: 700;
 }
+
 #providerDashboard .status.pending {
     background: #e6f9fc;
     color: #0891b2;
 }
+
 #providerDashboard .status.accepted {
     background: #dff7fb;
     color: #067c98;
 }
+
 #providerDashboard .status.completed {
     background: #e8f8f0;
     color: #087443;
 }
+
 #providerDashboard .status.rejected {
     background: #fee2e2;
     color: #b91c1c;
 }
+
 #providerDashboard .request-action {
     display: flex;
     gap: 8px;
 }
+
 #providerDashboard .accept-btn,
 #providerDashboard .reject-btn,
 #providerDashboard .complete-btn {
@@ -1948,59 +1973,74 @@ tbody tr:hover {
     cursor: pointer;
     transition: .3s;
 }
+
 #providerDashboard .accept-btn {
     background: #06b6d4;
     color: #fff;
 }
+
 #providerDashboard .accept-btn:hover {
     background: #092f5f;
 }
+
 #providerDashboard .reject-btn {
     background: #fee2e2;
     color: #b91c1c;
 }
+
 #providerDashboard .reject-btn:hover {
     background: #b91c1c;
     color: #fff;
 }
+
 #providerDashboard .complete-btn {
     background: #e8f8f0;
     color: #087443;
 }
+
 #providerDashboard .complete-btn:hover {
     background: #087443;
     color: #fff;
 }
+
 @media(max-width:1000px) {
     #providerDashboard .dashboard-stats {
         grid-template-columns: repeat(2, 1fr);
     }
+
     #providerDashboard .dashboard-header {
         align-items: flex-start;
         flex-direction: column;
     }
 }
+
 @media(max-width:600px) {
     #providerDashboard {
         padding: 35px 20px;
     }
+
     #providerDashboard .dashboard-header h1 {
         font-size: 28px;
     }
+
     #providerDashboard .dashboard-stats {
         grid-template-columns: 1fr;
     }
+
     #providerDashboard .dashboard-actions {
         width: 100%;
     }
+
     #providerDashboard .home-btn,
     #providerDashboard .logout-btn {
         flex: 1;
     }
+
     #providerDashboard .bookings-card {
         padding: 20px 15px;
     }
 }
+
 /* Dashboard Dark Blue Buttons */
 .dashboard-actions .home-btn {
     background: #022761;
@@ -2043,245 +2083,291 @@ tbody tr:hover {
     color: #ffffff;
     transform: translateY(-2px);
 }
+
 /* ================= ADMIN DASHBOARD ================= */
-#adminDashboard{
-    background:#f4f8fb;
-    color:#092f5f;
+#adminDashboard {
+    background: #f4f8fb;
+    color: #092f5f;
 }
-#adminDashboard .dashboard-header{
-    margin-bottom:40px;
+
+#adminDashboard .dashboard-header {
+    margin-bottom: 40px;
 }
-#adminDashboard .dashboard-label{
-    color:#06b6d4;
+
+#adminDashboard .dashboard-label {
+    color: #06b6d4;
 }
-#adminDashboard .dashboard-header h1{
-    color:#092f5f;
+
+#adminDashboard .dashboard-header h1 {
+    color: #092f5f;
 }
-#adminDashboard .dashboard-header h1 span{
-    color:#06b6d4;
+
+#adminDashboard .dashboard-header h1 span {
+    color: #06b6d4;
 }
-#adminDashboard .dashboard-header p{
-    color:#64748b;
+
+#adminDashboard .dashboard-header p {
+    color: #64748b;
 }
-#adminDashboard .dashboard-actions{
-    display:flex;
-    gap:12px;
+
+#adminDashboard .dashboard-actions {
+    display: flex;
+    gap: 12px;
 }
+
 #adminDashboard .home-btn,
-#adminDashboard .logout-btn{
-    background:#022761;
-    border:1px solid #022761;
-    color:#fff;
+#adminDashboard .logout-btn {
+    background: #022761;
+    border: 1px solid #022761;
+    color: #fff;
 }
+
 #adminDashboard .home-btn:hover,
-#adminDashboard .logout-btn:hover{
-    background:#0b3d8d;
-    border-color:#0b3d8d;
-    color:#fff;
-    transform:translateY(-2px);
+#adminDashboard .logout-btn:hover {
+    background: #0b3d8d;
+    border-color: #0b3d8d;
+    color: #fff;
+    transform: translateY(-2px);
 }
-#adminDashboard .stats-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
-    margin-bottom:30px;
+
+#adminDashboard .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
 }
-#adminDashboard .stat-card{
-    position:relative;
-    background:#fff;
-    border:1px solid #dce7ee;
-    border-radius:12px;
-    padding:25px;
-    min-height:145px;
-    box-shadow:0 4px 15px rgba(9,47,95,.05);
+
+#adminDashboard .stat-card {
+    position: relative;
+    background: #fff;
+    border: 1px solid #dce7ee;
+    border-radius: 12px;
+    padding: 25px;
+    min-height: 145px;
+    box-shadow: 0 4px 15px rgba(9, 47, 95, .05);
 }
-#adminDashboard .stat-card span{
-    display:block;
-    color:#64748b;
-    font-size:14px;
-    font-weight:600;
-    margin-bottom:15px;
+
+#adminDashboard .stat-card span {
+    display: block;
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 15px;
 }
-#adminDashboard .stat-card h2{
-    color:#092f5f;
-    font-size:32px;
+
+#adminDashboard .stat-card h2 {
+    color: #092f5f;
+    font-size: 32px;
 }
-#adminDashboard .stat-card i{
-    position:absolute;
-    right:22px;
-    top:25px;
-    width:45px;
-    height:45px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:10px;
-    background:#e6f9fc;
-    color:#06b6d4;
-    font-size:20px;
+
+#adminDashboard .stat-card i {
+    position: absolute;
+    right: 22px;
+    top: 25px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #e6f9fc;
+    color: #06b6d4;
+    font-size: 20px;
 }
-#adminDashboard .admin-grid{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:25px;
-    margin-bottom:25px;
+
+#adminDashboard .admin-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-bottom: 25px;
 }
-#adminDashboard .admin-card{
-    background:#fff;
-    border:1px solid #dce7ee;
-    border-radius:12px;
-    overflow:hidden;
-    box-shadow:0 4px 15px rgba(9,47,95,.05);
+
+#adminDashboard .admin-card {
+    background: #fff;
+    border: 1px solid #dce7ee;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(9, 47, 95, .05);
 }
-#adminDashboard .bookings-heading{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
-    padding:25px;
+
+#adminDashboard .bookings-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 25px;
 }
-#adminDashboard .bookings-heading h2{
-    color:#092f5f;
-    font-size:21px;
-    margin-bottom:6px;
+
+#adminDashboard .bookings-heading h2 {
+    color: #092f5f;
+    font-size: 21px;
+    margin-bottom: 6px;
 }
-#adminDashboard .bookings-heading p{
-    color:#64748b;
-    font-size:14px;
+
+#adminDashboard .bookings-heading p {
+    color: #64748b;
+    font-size: 14px;
 }
+
 #adminDashboard #adminBookingCount,
 #adminDashboard #adminProviderCount,
-#adminDashboard #adminCustomerCount{
-    background:#e6f9fc;
-    color:#0891b2;
-    padding:8px 14px;
-    border-radius:20px;
-    font-size:13px;
-    font-weight:600;
-    white-space:nowrap;
+#adminDashboard #adminCustomerCount {
+    background: #e6f9fc;
+    color: #0891b2;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
 }
-#adminDashboard .table-container{
-    width:100%;
-    overflow-x:auto;
+
+#adminDashboard .table-container {
+    width: 100%;
+    overflow-x: auto;
 }
-#adminDashboard table{
-    width:100%;
-    border-collapse:collapse;
-    min-width:750px;
+
+#adminDashboard table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 750px;
 }
-#adminDashboard thead{
-    background:#092f5f;
+
+#adminDashboard thead {
+    background: #092f5f;
 }
-#adminDashboard th{
-    padding:15px;
-    text-align:left;
-    color:#fff;
-    font-size:13px;
-    font-weight:600;
+
+#adminDashboard th {
+    padding: 15px;
+    text-align: left;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
 }
-#adminDashboard td{
-    padding:17px 15px;
-    color:#334155;
-    font-size:14px;
-    border-bottom:1px solid #e8eef2;
+
+#adminDashboard td {
+    padding: 17px 15px;
+    color: #334155;
+    font-size: 14px;
+    border-bottom: 1px solid #e8eef2;
 }
-#adminDashboard tbody tr:hover{
-    background:#f2fbfd;
+
+#adminDashboard tbody tr:hover {
+    background: #f2fbfd;
 }
-#adminDashboard .empty-booking{
-    text-align:center;
-    padding:45px;
-    color:#94a3b8;
+
+#adminDashboard .empty-booking {
+    text-align: center;
+    padding: 45px;
+    color: #94a3b8;
 }
-#adminDashboard .status{
-    display:inline-block;
-    padding:6px 12px;
-    border-radius:20px;
-    font-size:12px;
-    font-weight:700;
+
+#adminDashboard .status {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
 }
-#adminDashboard .status.pending{
-    background:#e6f9fc;
-    color:#0891b2;
+
+#adminDashboard .status.pending {
+    background: #e6f9fc;
+    color: #0891b2;
 }
-#adminDashboard .status.accepted{
-    background:#dff7fb;
-    color:#067c98;
+
+#adminDashboard .status.accepted {
+    background: #dff7fb;
+    color: #067c98;
 }
-#adminDashboard .status.completed{
-    background:#e8f8f0;
-    color:#087443;
+
+#adminDashboard .status.completed {
+    background: #e8f8f0;
+    color: #087443;
 }
-#adminDashboard .status.rejected{
-    background:#fee2e2;
-    color:#b91c1c;
+
+#adminDashboard .status.rejected {
+    background: #fee2e2;
+    color: #b91c1c;
 }
-#adminDashboard .admin-menu{
-    display:grid;
-    grid-template-columns:repeat(6,1fr);
-    gap:15px;
-    margin-top:25px;
+
+#adminDashboard .admin-menu {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+    margin-top: 25px;
 }
-#adminDashboard .admin-menu button{
-    min-height:95px;
-    border:1px solid #dce7ee;
-    background:#fff;
-    color:#092f5f;
-    border-radius:10px;
-    cursor:pointer;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    font-size:13px;
-    font-weight:600;
-    transition:.3s;
+
+#adminDashboard .admin-menu button {
+    min-height: 95px;
+    border: 1px solid #dce7ee;
+    background: #fff;
+    color: #092f5f;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: .3s;
 }
-#adminDashboard .admin-menu button i{
-    font-size:22px;
-    color:#06b6d4;
+
+#adminDashboard .admin-menu button i {
+    font-size: 22px;
+    color: #06b6d4;
 }
-#adminDashboard .admin-menu button:hover{
-    background:#022761;
-    border-color:#022761;
-    color:#fff;
-    transform:translateY(-3px);
+
+#adminDashboard .admin-menu button:hover {
+    background: #022761;
+    border-color: #022761;
+    color: #fff;
+    transform: translateY(-3px);
 }
-#adminDashboard .admin-menu button:hover i{
-    color:#22d3ee;
+
+#adminDashboard .admin-menu button:hover i {
+    color: #22d3ee;
 }
-@media(max-width:1000px){
-    #adminDashboard .stats-grid{
-        grid-template-columns:repeat(2,1fr);
+
+@media(max-width:1000px) {
+    #adminDashboard .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
-    #adminDashboard .admin-menu{
-        grid-template-columns:repeat(3,1fr);
+
+    #adminDashboard .admin-menu {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
-@media(max-width:600px){
-    #adminDashboard{
-        padding:35px 5%;
+
+@media(max-width:600px) {
+    #adminDashboard {
+        padding: 35px 5%;
     }
-    #adminDashboard .dashboard-header{
-        flex-direction:column;
-        align-items:flex-start;
+
+    #adminDashboard .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
     }
-    #adminDashboard .stats-grid{
-        grid-template-columns:1fr;
+
+    #adminDashboard .stats-grid {
+        grid-template-columns: 1fr;
     }
-    #adminDashboard .admin-menu{
-        grid-template-columns:repeat(2,1fr);
+
+    #adminDashboard .admin-menu {
+        grid-template-columns: repeat(2, 1fr);
     }
-    #adminDashboard .bookings-heading{
-        align-items:flex-start;
-        flex-direction:column;
+
+    #adminDashboard .bookings-heading {
+        align-items: flex-start;
+        flex-direction: column;
     }
-    #adminDashboard .dashboard-actions{
-        width:100%;
+
+    #adminDashboard .dashboard-actions {
+        width: 100%;
     }
+
     #adminDashboard .home-btn,
-    #adminDashboard .logout-btn{
-        flex:1;
+    #adminDashboard .logout-btn {
+        flex: 1;
     }
 }
