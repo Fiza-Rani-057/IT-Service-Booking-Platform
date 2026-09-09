@@ -1,3 +1,4 @@
+
 function showSection(sectionId) {
     const sections = document.querySelectorAll("body > section");
 
@@ -17,10 +18,8 @@ function showSection(sectionId) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-
     showSection("login");
 
-    // Login
     const loginForm = document.getElementById("loginForm");
     const email = document.getElementById("email");
     const password = document.getElementById("password");
@@ -36,28 +35,59 @@ document.addEventListener("DOMContentLoaded", function() {
             if (emailVal === "") {
                 alert("Please enter your email address.");
                 email.focus();
-            } else if (passVal === "") {
+                return;
+            }
+
+            if (passVal === "") {
                 alert("Please enter your password.");
                 password.focus();
-            } else if (emailVal === "customer@gmail.com" && passVal === "customer123") {
-                localStorage.setItem("techserveRole", "customer");
-                localStorage.setItem("techserveUserEmail", emailVal);
+                return;
+            }
 
-                loginForm.reset();
-                showSection("home");
-            } else if (emailVal === "provider@gmail.com" && passVal === "provider123") {
+            if (emailVal === "provider@gmail.com" && passVal === "provider123") {
                 localStorage.setItem("techserveRole", "provider");
                 localStorage.setItem("techserveUserEmail", emailVal);
+                localStorage.setItem("techserveUserName", "Provider");
 
                 loginForm.reset();
                 showSection("home");
-            } else {
-                alert("Invalid email or password. Please try again.");
+                return;
             }
+
+            if (emailVal === "customer@gmail.com" && passVal === "customer123") {
+                localStorage.setItem("techserveRole", "customer");
+                localStorage.setItem("techserveUserEmail", emailVal);
+                localStorage.setItem("techserveUserName", "Customer");
+
+                loginForm.reset();
+                showSection("home");
+                return;
+            }
+
+            const users = JSON.parse(localStorage.getItem("techserveUsers")) || [];
+
+            let foundUser = null;
+
+            users.forEach(function(user) {
+                if (user.email === emailVal && user.password === passVal) {
+                    foundUser = user;
+                }
+            });
+
+            if (foundUser) {
+                localStorage.setItem("techserveRole", foundUser.role);
+                localStorage.setItem("techserveUserEmail", foundUser.email);
+                localStorage.setItem("techserveUserName", foundUser.name);
+
+                loginForm.reset();
+                showSection("home");
+                return;
+            }
+
+            alert("Invalid email or password. Please try again.");
         });
     }
 
-    // Password Show / Hide
     if (togglePassword && password) {
         togglePassword.addEventListener("click", function() {
             const isPassword = password.type === "password";
@@ -69,7 +99,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Sign Up
     const signupForm = document.getElementById("signupForm");
 
     if (signupForm) {
@@ -96,6 +125,31 @@ document.addEventListener("DOMContentLoaded", function() {
                 return;
             }
 
+            let users = JSON.parse(localStorage.getItem("techserveUsers")) || [];
+
+            let existingUser = false;
+
+            users.forEach(function(user) {
+                if (user.email === signupEmail) {
+                    existingUser = true;
+                }
+            });
+
+            if (existingUser) {
+                alert("An account with this email already exists.");
+                return;
+            }
+
+            const newUser = {
+                name: name,
+                email: signupEmail,
+                password: signupPassword,
+                role: "customer"
+            };
+
+            users.push(newUser);
+
+            localStorage.setItem("techserveUsers", JSON.stringify(users));
             localStorage.setItem("techserveRole", "customer");
             localStorage.setItem("techserveUserEmail", signupEmail);
             localStorage.setItem("techserveUserName", name);
@@ -106,24 +160,25 @@ document.addEventListener("DOMContentLoaded", function() {
             showSection("home");
         });
     }
+
+    loadBookings();
 });
 
-// Dashboard according to user role
 function openUserDashboard() {
     const role = localStorage.getItem("techserveRole");
 
     if (role === "customer") {
         showSection("dashboard");
-        loadBookings();
+        loadDashboard();
     } else if (role === "provider") {
         showSection("providerDashboard");
+        loadProviderDashboard();
     } else {
         alert("Please login first.");
         showSection("login");
     }
 }
 
-// Logout
 function logoutUser() {
     localStorage.removeItem("techserveRole");
     localStorage.removeItem("techserveUserEmail");
@@ -132,87 +187,50 @@ function logoutUser() {
     showSection("login");
 }
 
-// Customer Dashboard
 function loadDashboard() {
     const userName = localStorage.getItem("techserveUserName");
     const bookings = JSON.parse(localStorage.getItem("techserveBookings")) || [];
 
-    if (userName && document.getElementById("dashboardName")) {
-        document.getElementById("dashboardName").textContent = userName;
+    const dashboardName = document.getElementById("dashboardName");
+
+    if (dashboardName && userName) {
+        dashboardName.textContent = userName;
     }
 
-    const pending = bookings.filter(function(booking) {
-        return booking.status === "Pending";
-    }).length;
-
-    const accepted = bookings.filter(function(booking) {
-        return booking.status === "Accepted";
-    }).length;
-
-    const completed = bookings.filter(function(booking) {
-        return booking.status === "Completed";
-    }).length;
-
-    document.getElementById("totalBookings").textContent = bookings.length;
-    document.getElementById("pendingBookings").textContent = pending;
-    document.getElementById("acceptedBookings").textContent = accepted;
-    document.getElementById("completedBookings").textContent = completed;
-    document.getElementById("bookingCount").textContent = bookings.length + " Bookings";
-
-    const table = document.getElementById("bookingTableBody");
-
-    if (!table) {
-        return;
-    }
-
-    if (bookings.length === 0) {
-        table.innerHTML = '<tr><td colspan="6" class="empty-booking">No bookings available yet.</td></tr>';
-        return;
-    }
-
-    table.innerHTML = "";
-
-    bookings.forEach(function(booking) {
-        const row = document.createElement("tr");
-
-        row.innerHTML = `
-            <td>${booking.id}</td>
-            <td>${booking.service}</td>
-            <td>${booking.provider}</td>
-            <td>${booking.date}</td>
-            <td>${booking.time}</td>
-            <td><span class="status ${booking.status.toLowerCase()}">${booking.status}</span></td>
-        `;
-
-        table.appendChild(row);
-    });
+    loadBookings();
 }
 
-// Booking Modal
 function openBookingModal() {
-    document.getElementById("bookingModal").classList.add("active");
+    const modal = document.getElementById("bookingModal");
+
+    if (modal) {
+        modal.classList.add("active");
+    }
 }
 
 function closeBookingModal() {
-    document.getElementById("bookingModal").classList.remove("active");
+    const modal = document.getElementById("bookingModal");
+
+    if (modal) {
+        modal.classList.remove("active");
+    }
 }
 
 const bookingModal = document.getElementById("bookingModal");
 
 if (bookingModal) {
-    bookingModal.addEventListener("click", function(e) {
-        if (e.target === this) {
+    bookingModal.addEventListener("click", function(event) {
+        if (event.target === bookingModal) {
             closeBookingModal();
         }
     });
 }
 
-// Booking Form
 const bookingForm = document.getElementById("bookingForm");
 
 if (bookingForm) {
-    bookingForm.addEventListener("submit", function(e) {
-        e.preventDefault();
+    bookingForm.addEventListener("submit", function(event) {
+        event.preventDefault();
 
         const service = document.getElementById("bookingService").value;
         const provider = document.getElementById("bookingProvider").value.trim();
@@ -221,13 +239,40 @@ if (bookingForm) {
         const location = document.getElementById("bookingLocation").value.trim();
         const description = document.getElementById("bookingDescription").value.trim();
 
-        if (service === "" || provider === "" || date === "" || time === "" || location === "" || description === "") {
-            alert("Please fill all fields.");
+        if (service === "") {
+            alert("Please select a service.");
+            return;
+        }
+
+        if (provider === "") {
+            alert("Please enter provider name.");
+            return;
+        }
+
+        if (date === "") {
+            alert("Please select booking date.");
+            return;
+        }
+
+        if (time === "") {
+            alert("Please select booking time.");
+            return;
+        }
+
+        if (location === "") {
+            alert("Please enter your location.");
+            return;
+        }
+
+        if (description === "") {
+            alert("Please enter booking description.");
             return;
         }
 
         const booking = {
             id: "TS" + Date.now().toString().slice(-6),
+            customer: localStorage.getItem("techserveUserName") || "Customer",
+            customerEmail: localStorage.getItem("techserveUserEmail") || "",
             service: service,
             provider: provider,
             date: date,
@@ -253,7 +298,6 @@ if (bookingForm) {
     });
 }
 
-// Load Bookings
 function loadBookings() {
     const bookings = JSON.parse(localStorage.getItem("techserveBookings")) || [];
 
@@ -291,6 +335,7 @@ function loadBookings() {
     pending.textContent = pendingCount;
     accepted.textContent = acceptedCount;
     completed.textContent = completedCount;
+
     count.textContent = bookings.length + " Bookings";
 
     if (bookings.length === 0) {
@@ -316,6 +361,90 @@ function loadBookings() {
     });
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+function loadProviderDashboard() {
+    const providerName = document.getElementById("providerName");
+    const providerEmail = localStorage.getItem("techserveUserEmail");
+
+    if (providerName) {
+        if (providerEmail === "provider@gmail.com") {
+            providerName.textContent = "Provider";
+        } else {
+            providerName.textContent = localStorage.getItem("techserveUserName") || "Provider";
+        }
+    }
+
+    const bookings = JSON.parse(localStorage.getItem("techserveBookings")) || [];
+
+    const providerBookingCount = document.getElementById("providerBookingCount");
+    const providerTableBody = document.querySelector("#providerDashboard tbody");
+
+    if (providerBookingCount) {
+        providerBookingCount.textContent = bookings.length + " Requests";
+    }
+
+    if (!providerTableBody) {
+        return;
+    }
+
+    if (bookings.length === 0) {
+        providerTableBody.innerHTML = '<tr><td colspan="7" class="empty-booking">No service requests available yet.</td></tr>';
+        return;
+    }
+
+    providerTableBody.innerHTML = "";
+
+    bookings.forEach(function(booking) {
+        const row = document.createElement("tr");
+
+        let actionButtons = "";
+
+        if (booking.status === "Pending") {
+            actionButtons = `
+                <div class="request-action">
+                    <button class="accept-btn" onclick="updateBookingStatus('${booking.id}','Accepted')">Accept</button>
+                    <button class="reject-btn" onclick="updateBookingStatus('${booking.id}','Rejected')">Reject</button>
+                </div>
+            `;
+        } else if (booking.status === "Accepted") {
+            actionButtons = `
+                <button class="complete-btn" onclick="updateBookingStatus('${booking.id}','Completed')">Complete</button>
+            `;
+        } else {
+            actionButtons = "-";
+        }
+
+        row.innerHTML = `
+            <td>${booking.id}</td>
+            <td>${booking.customer || "Customer"}</td>
+            <td>${booking.service}</td>
+            <td>${booking.date}</td>
+            <td>${booking.time}</td>
+            <td><span class="status ${booking.status.toLowerCase()}">${booking.status}</span></td>
+            <td>${actionButtons}</td>
+        `;
+
+        providerTableBody.appendChild(row);
+    });
+}
+
+function updateBookingStatus(bookingId, newStatus) {
+    let bookings = JSON.parse(localStorage.getItem("techserveBookings")) || [];
+
+    bookings.forEach(function(booking) {
+        if (booking.id === bookingId) {
+            booking.status = newStatus;
+        }
+    });
+
+    localStorage.setItem("techserveBookings", JSON.stringify(bookings));
+
+    loadProviderDashboard();
     loadBookings();
-});
+
+    alert("Booking status updated to " + newStatus + ".");
+}
+
+function goToHome() {
+    showSection("home");
+}
+
