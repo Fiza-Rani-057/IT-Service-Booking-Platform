@@ -1,83 +1,98 @@
+function showSection(sectionId){
+    const sections=document.querySelectorAll("body > section");
 
-function showSection(sectionId) {
-    const sections = document.querySelectorAll("body > section");
-
-    sections.forEach(function(section) {
-        section.style.display = "none";
+    sections.forEach(function(section){
+        section.style.display="none";
     });
 
-    const targetSection = document.getElementById(sectionId);
+    const targetSection=document.getElementById(sectionId);
 
-    if (targetSection) {
-        if (sectionId === "login" || sectionId === "signup") {
-            targetSection.style.display = "flex";
-        } else {
-            targetSection.style.display = "block";
+    if(targetSection){
+        if(sectionId==="login"||sectionId==="signup"){
+            targetSection.style.display="flex";
+        }else{
+            targetSection.style.display="block";
         }
     }
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded",function(){
+
     showSection("login");
 
-    const loginForm = document.getElementById("loginForm");
-    const email = document.getElementById("email");
-    const password = document.getElementById("password");
-    const togglePassword = document.getElementById("togglePassword");
+    const loginForm=document.getElementById("loginForm");
+    const email=document.getElementById("email");
+    const password=document.getElementById("password");
+    const togglePassword=document.getElementById("togglePassword");
 
-    if (loginForm) {
-        loginForm.addEventListener("submit", function(event) {
+    if(loginForm){
+        loginForm.addEventListener("submit",function(event){
             event.preventDefault();
 
-            const emailVal = email.value.trim();
-            const passVal = password.value.trim();
+            const emailVal=email.value.trim();
+            const passVal=password.value.trim();
 
-            if (emailVal === "") {
+            if(emailVal===""){
                 alert("Please enter your email address.");
                 email.focus();
                 return;
             }
 
-            if (passVal === "") {
+            if(passVal===""){
                 alert("Please enter your password.");
                 password.focus();
                 return;
             }
 
-            if (emailVal === "provider@gmail.com" && passVal === "provider123") {
-                localStorage.setItem("techserveRole", "provider");
-                localStorage.setItem("techserveUserEmail", emailVal);
-                localStorage.setItem("techserveUserName", "Provider");
+            if(emailVal==="admin@gmail.com"&&passVal==="admin123"){
+                localStorage.setItem("techserveRole","admin");
+                localStorage.setItem("techserveUserEmail",emailVal);
+                localStorage.setItem("techserveUserName","Admin");
 
                 loginForm.reset();
                 showSection("home");
                 return;
             }
 
-            if (emailVal === "customer@gmail.com" && passVal === "customer123") {
-                localStorage.setItem("techserveRole", "customer");
-                localStorage.setItem("techserveUserEmail", emailVal);
-                localStorage.setItem("techserveUserName", "Customer");
+            if(emailVal==="provider@gmail.com"&&passVal==="provider123"){
+                localStorage.setItem("techserveRole","provider");
+                localStorage.setItem("techserveUserEmail",emailVal);
+                localStorage.setItem("techserveUserName","Provider");
 
                 loginForm.reset();
                 showSection("home");
                 return;
             }
 
-            const users = JSON.parse(localStorage.getItem("techserveUsers")) || [];
+            if(emailVal==="customer@gmail.com"&&passVal==="customer123"){
+                localStorage.setItem("techserveRole","customer");
+                localStorage.setItem("techserveUserEmail",emailVal);
+                localStorage.setItem("techserveUserName","Customer");
 
-            let foundUser = null;
+                loginForm.reset();
+                showSection("home");
+                return;
+            }
 
-            users.forEach(function(user) {
-                if (user.email === emailVal && user.password === passVal) {
-                    foundUser = user;
+            const users=JSON.parse(localStorage.getItem("techserveUsers"))||[];
+
+            let foundUser=null;
+
+            users.forEach(function(user){
+                if(user.email===emailVal&&user.password===passVal){
+                    foundUser=user;
                 }
             });
 
-            if (foundUser) {
-                localStorage.setItem("techserveRole", foundUser.role);
-                localStorage.setItem("techserveUserEmail", foundUser.email);
-                localStorage.setItem("techserveUserName", foundUser.name);
+            if(foundUser){
+                localStorage.setItem("techserveRole",foundUser.role);
+                localStorage.setItem("techserveUserEmail",foundUser.email);
+                localStorage.setItem("techserveUserName",foundUser.name);
 
                 loginForm.reset();
                 showSection("home");
@@ -88,71 +103,71 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    if (togglePassword && password) {
-        togglePassword.addEventListener("click", function() {
-            const isPassword = password.type === "password";
+    if(togglePassword&&password){
+        togglePassword.addEventListener("click",function(){
+            const isPassword=password.type==="password";
 
-            password.type = isPassword ? "text" : "password";
+            password.type=isPassword?"text":"password";
 
-            this.classList.toggle("fa-eye", !isPassword);
-            this.classList.toggle("fa-eye-slash", isPassword);
+            this.classList.toggle("fa-eye",!isPassword);
+            this.classList.toggle("fa-eye-slash",isPassword);
         });
     }
 
-    const signupForm = document.getElementById("signupForm");
+    const signupForm=document.getElementById("signupForm");
 
-    if (signupForm) {
-        signupForm.addEventListener("submit", function(event) {
+    if(signupForm){
+        signupForm.addEventListener("submit",function(event){
             event.preventDefault();
 
-            const name = document.getElementById("signupName").value.trim();
-            const signupEmail = document.getElementById("signupEmail").value.trim();
-            const signupPassword = document.getElementById("signupPassword").value;
-            const confirmPassword = document.getElementById("confirmPassword").value;
+            const name=document.getElementById("signupName").value.trim();
+            const signupEmail=document.getElementById("signupEmail").value.trim();
+            const signupPassword=document.getElementById("signupPassword").value;
+            const confirmPassword=document.getElementById("confirmPassword").value;
 
-            if (name === "" || signupEmail === "" || signupPassword === "" || confirmPassword === "") {
+            if(name===""||signupEmail===""||signupPassword===""||confirmPassword===""){
                 alert("Please fill in all required fields.");
                 return;
             }
 
-            if (signupPassword.length < 6) {
+            if(signupPassword.length<6){
                 alert("Password must be at least 6 characters long.");
                 return;
             }
 
-            if (signupPassword !== confirmPassword) {
+            if(signupPassword!==confirmPassword){
                 alert("Passwords do not match.");
                 return;
             }
 
-            let users = JSON.parse(localStorage.getItem("techserveUsers")) || [];
+            let users=JSON.parse(localStorage.getItem("techserveUsers"))||[];
 
-            let existingUser = false;
+            let existingUser=false;
 
-            users.forEach(function(user) {
-                if (user.email === signupEmail) {
-                    existingUser = true;
+            users.forEach(function(user){
+                if(user.email===signupEmail){
+                    existingUser=true;
                 }
             });
 
-            if (existingUser) {
+            if(existingUser){
                 alert("An account with this email already exists.");
                 return;
             }
 
-            const newUser = {
-                name: name,
-                email: signupEmail,
-                password: signupPassword,
-                role: "customer"
+            const newUser={
+                name:name,
+                email:signupEmail,
+                password:signupPassword,
+                role:"customer"
             };
 
             users.push(newUser);
 
-            localStorage.setItem("techserveUsers", JSON.stringify(users));
-            localStorage.setItem("techserveRole", "customer");
-            localStorage.setItem("techserveUserEmail", signupEmail);
-            localStorage.setItem("techserveUserName", name);
+            localStorage.setItem("techserveUsers",JSON.stringify(users));
+            localStorage.setItem("techserveRole","customer");
+            localStorage.setItem("techserveUserEmail",signupEmail);
+            localStorage.setItem("techserveUserName",name);
 
             alert("Account created successfully!");
 
@@ -161,25 +176,112 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    const bookingModal=document.getElementById("bookingModal");
+
+    if(bookingModal){
+        bookingModal.addEventListener("click",function(event){
+            if(event.target===bookingModal){
+                closeBookingModal();
+            }
+        });
+    }
+
+    const bookingForm=document.getElementById("bookingForm");
+
+    if(bookingForm){
+        bookingForm.addEventListener("submit",function(event){
+            event.preventDefault();
+
+            const service=document.getElementById("bookingService").value;
+            const provider=document.getElementById("bookingProvider").value.trim();
+            const date=document.getElementById("bookingDate").value;
+            const time=document.getElementById("bookingTime").value;
+            const location=document.getElementById("bookingLocation").value.trim();
+            const description=document.getElementById("bookingDescription").value.trim();
+
+            if(service===""){
+                alert("Please select a service.");
+                return;
+            }
+
+            if(provider===""){
+                alert("Please enter provider name.");
+                return;
+            }
+
+            if(date===""){
+                alert("Please select booking date.");
+                return;
+            }
+
+            if(time===""){
+                alert("Please select booking time.");
+                return;
+            }
+
+            if(location===""){
+                alert("Please enter your location.");
+                return;
+            }
+
+            if(description===""){
+                alert("Please enter booking description.");
+                return;
+            }
+
+            const booking={
+                id:"TS"+Date.now().toString().slice(-6),
+                customer:localStorage.getItem("techserveUserName")||"Customer",
+                customerEmail:localStorage.getItem("techserveUserEmail")||"",
+                service:service,
+                provider:provider,
+                date:date,
+                time:time,
+                location:location,
+                description:description,
+                status:"Pending"
+            };
+
+            let bookings=JSON.parse(localStorage.getItem("techserveBookings"))||[];
+
+            bookings.push(booking);
+
+            localStorage.setItem("techserveBookings",JSON.stringify(bookings));
+
+            bookingForm.reset();
+            closeBookingModal();
+            loadBookings();
+            loadProviderDashboard();
+            loadAdminDashboard();
+
+            alert("Booking created successfully!\nBooking ID: "+booking.id);
+        });
+    }
+
     loadBookings();
+    loadProviderDashboard();
+    loadAdminDashboard();
 });
 
-function openUserDashboard() {
-    const role = localStorage.getItem("techserveRole");
+function openUserDashboard(){
+    const role=localStorage.getItem("techserveRole");
 
-    if (role === "customer") {
+    if(role==="customer"){
         showSection("dashboard");
         loadDashboard();
-    } else if (role === "provider") {
+    }else if(role==="provider"){
         showSection("providerDashboard");
         loadProviderDashboard();
-    } else {
+    }else if(role==="admin"){
+        showSection("adminDashboard");
+        loadAdminDashboard();
+    }else{
         alert("Please login first.");
         showSection("login");
     }
 }
 
-function logoutUser() {
+function logoutUser(){
     localStorage.removeItem("techserveRole");
     localStorage.removeItem("techserveUserEmail");
     localStorage.removeItem("techserveUserName");
@@ -187,168 +289,101 @@ function logoutUser() {
     showSection("login");
 }
 
-function loadDashboard() {
-    const userName = localStorage.getItem("techserveUserName");
-    const bookings = JSON.parse(localStorage.getItem("techserveBookings")) || [];
+function loadDashboard(){
+    const userName=localStorage.getItem("techserveUserName");
+    const dashboardName=document.getElementById("dashboardName");
 
-    const dashboardName = document.getElementById("dashboardName");
-
-    if (dashboardName && userName) {
-        dashboardName.textContent = userName;
+    if(dashboardName&&userName){
+        dashboardName.textContent=userName;
     }
 
     loadBookings();
 }
 
-function openBookingModal() {
-    const modal = document.getElementById("bookingModal");
+function openBookingModal(){
+    const role=localStorage.getItem("techserveRole");
 
-    if (modal) {
+    if(role!=="customer"){
+        alert("Please login as a customer to create a booking.");
+        return;
+    }
+
+    const modal=document.getElementById("bookingModal");
+
+    if(modal){
         modal.classList.add("active");
     }
 }
 
-function closeBookingModal() {
-    const modal = document.getElementById("bookingModal");
+function closeBookingModal(){
+    const modal=document.getElementById("bookingModal");
 
-    if (modal) {
+    if(modal){
         modal.classList.remove("active");
     }
 }
 
-const bookingModal = document.getElementById("bookingModal");
+function loadBookings(){
+    const bookings=JSON.parse(localStorage.getItem("techserveBookings"))||[];
 
-if (bookingModal) {
-    bookingModal.addEventListener("click", function(event) {
-        if (event.target === bookingModal) {
-            closeBookingModal();
-        }
-    });
-}
+    const total=document.getElementById("totalBookings");
+    const pending=document.getElementById("pendingBookings");
+    const accepted=document.getElementById("acceptedBookings");
+    const completed=document.getElementById("completedBookings");
+    const count=document.getElementById("bookingCount");
+    const tableBody=document.getElementById("bookingTableBody");
 
-const bookingForm = document.getElementById("bookingForm");
-
-if (bookingForm) {
-    bookingForm.addEventListener("submit", function(event) {
-        event.preventDefault();
-
-        const service = document.getElementById("bookingService").value;
-        const provider = document.getElementById("bookingProvider").value.trim();
-        const date = document.getElementById("bookingDate").value;
-        const time = document.getElementById("bookingTime").value;
-        const location = document.getElementById("bookingLocation").value.trim();
-        const description = document.getElementById("bookingDescription").value.trim();
-
-        if (service === "") {
-            alert("Please select a service.");
-            return;
-        }
-
-        if (provider === "") {
-            alert("Please enter provider name.");
-            return;
-        }
-
-        if (date === "") {
-            alert("Please select booking date.");
-            return;
-        }
-
-        if (time === "") {
-            alert("Please select booking time.");
-            return;
-        }
-
-        if (location === "") {
-            alert("Please enter your location.");
-            return;
-        }
-
-        if (description === "") {
-            alert("Please enter booking description.");
-            return;
-        }
-
-        const booking = {
-            id: "TS" + Date.now().toString().slice(-6),
-            customer: localStorage.getItem("techserveUserName") || "Customer",
-            customerEmail: localStorage.getItem("techserveUserEmail") || "",
-            service: service,
-            provider: provider,
-            date: date,
-            time: time,
-            location: location,
-            description: description,
-            status: "Pending"
-        };
-
-        let bookings = JSON.parse(localStorage.getItem("techserveBookings")) || [];
-
-        bookings.push(booking);
-
-        localStorage.setItem("techserveBookings", JSON.stringify(bookings));
-
-        bookingForm.reset();
-
-        closeBookingModal();
-
-        loadBookings();
-
-        alert("Booking created successfully!\nBooking ID: " + booking.id);
-    });
-}
-
-function loadBookings() {
-    const bookings = JSON.parse(localStorage.getItem("techserveBookings")) || [];
-
-    const total = document.getElementById("totalBookings");
-    const pending = document.getElementById("pendingBookings");
-    const accepted = document.getElementById("acceptedBookings");
-    const completed = document.getElementById("completedBookings");
-    const count = document.getElementById("bookingCount");
-    const tableBody = document.getElementById("bookingTableBody");
-
-    if (!total || !pending || !accepted || !completed || !count || !tableBody) {
+    if(!total||!pending||!accepted||!completed||!count||!tableBody){
         return;
     }
 
-    total.textContent = bookings.length;
+    const currentEmail=localStorage.getItem("techserveUserEmail");
+    const role=localStorage.getItem("techserveRole");
 
-    let pendingCount = 0;
-    let acceptedCount = 0;
-    let completedCount = 0;
+    let customerBookings=bookings;
 
-    bookings.forEach(function(booking) {
-        if (booking.status === "Pending") {
+    if(role==="customer"){
+        customerBookings=bookings.filter(function(booking){
+            return booking.customerEmail===currentEmail;
+        });
+    }
+
+    total.textContent=customerBookings.length;
+
+    let pendingCount=0;
+    let acceptedCount=0;
+    let completedCount=0;
+
+    customerBookings.forEach(function(booking){
+        if(booking.status==="Pending"){
             pendingCount++;
         }
 
-        if (booking.status === "Accepted") {
+        if(booking.status==="Accepted"){
             acceptedCount++;
         }
 
-        if (booking.status === "Completed") {
+        if(booking.status==="Completed"){
             completedCount++;
         }
     });
 
-    pending.textContent = pendingCount;
-    accepted.textContent = acceptedCount;
-    completed.textContent = completedCount;
+    pending.textContent=pendingCount;
+    accepted.textContent=acceptedCount;
+    completed.textContent=completedCount;
+    count.textContent=customerBookings.length+" Bookings";
 
-    count.textContent = bookings.length + " Bookings";
-
-    if (bookings.length === 0) {
-        tableBody.innerHTML = '<tr><td colspan="6" class="empty-booking">No bookings available yet.</td></tr>';
+    if(customerBookings.length===0){
+        tableBody.innerHTML='<tr><td colspan="6" class="empty-booking">No bookings available yet.</td></tr>';
         return;
     }
 
-    tableBody.innerHTML = "";
+    tableBody.innerHTML="";
 
-    bookings.forEach(function(booking) {
-        const row = document.createElement("tr");
+    customerBookings.forEach(function(booking){
+        const row=document.createElement("tr");
 
-        row.innerHTML = `
+        row.innerHTML=`
             <td>${booking.id}</td>
             <td>${booking.service}</td>
             <td>${booking.provider}</td>
@@ -361,61 +396,86 @@ function loadBookings() {
     });
 }
 
-function loadProviderDashboard() {
-    const providerName = document.getElementById("providerName");
-    const providerEmail = localStorage.getItem("techserveUserEmail");
+function loadProviderDashboard(){
+    const providerName=document.getElementById("providerName");
+    const providerEmail=localStorage.getItem("techserveUserEmail");
 
-    if (providerName) {
-        if (providerEmail === "provider@gmail.com") {
-            providerName.textContent = "Provider";
-        } else {
-            providerName.textContent = localStorage.getItem("techserveUserName") || "Provider";
+    if(providerName){
+        if(providerEmail==="provider@gmail.com"){
+            providerName.textContent="Provider";
+        }else{
+            providerName.textContent=localStorage.getItem("techserveUserName")||"Provider";
         }
     }
 
-    const bookings = JSON.parse(localStorage.getItem("techserveBookings")) || [];
+    const bookings=JSON.parse(localStorage.getItem("techserveBookings"))||[];
 
-    const providerBookingCount = document.getElementById("providerBookingCount");
-    const providerTableBody = document.querySelector("#providerDashboard tbody");
+    const total=document.getElementById("providerTotalBookings");
+    const pending=document.getElementById("providerPendingBookings");
+    const accepted=document.getElementById("providerAcceptedBookings");
+    const completed=document.getElementById("providerCompletedBookings");
+    const count=document.getElementById("providerBookingCount");
+    const tableBody=document.querySelector("#providerDashboard tbody");
 
-    if (providerBookingCount) {
-        providerBookingCount.textContent = bookings.length + " Requests";
-    }
-
-    if (!providerTableBody) {
+    if(!total||!pending||!accepted||!completed||!count||!tableBody){
         return;
     }
 
-    if (bookings.length === 0) {
-        providerTableBody.innerHTML = '<tr><td colspan="7" class="empty-booking">No service requests available yet.</td></tr>';
+    total.textContent=bookings.length;
+
+    let pendingCount=0;
+    let acceptedCount=0;
+    let completedCount=0;
+
+    bookings.forEach(function(booking){
+        if(booking.status==="Pending"){
+            pendingCount++;
+        }
+
+        if(booking.status==="Accepted"){
+            acceptedCount++;
+        }
+
+        if(booking.status==="Completed"){
+            completedCount++;
+        }
+    });
+
+    pending.textContent=pendingCount;
+    accepted.textContent=acceptedCount;
+    completed.textContent=completedCount;
+    count.textContent=bookings.length+" Requests";
+
+    if(bookings.length===0){
+        tableBody.innerHTML='<tr><td colspan="7" class="empty-booking">No service requests available yet.</td></tr>';
         return;
     }
 
-    providerTableBody.innerHTML = "";
+    tableBody.innerHTML="";
 
-    bookings.forEach(function(booking) {
-        const row = document.createElement("tr");
+    bookings.forEach(function(booking){
+        const row=document.createElement("tr");
 
-        let actionButtons = "";
+        let actionButtons="";
 
-        if (booking.status === "Pending") {
-            actionButtons = `
+        if(booking.status==="Pending"){
+            actionButtons=`
                 <div class="request-action">
                     <button class="accept-btn" onclick="updateBookingStatus('${booking.id}','Accepted')">Accept</button>
                     <button class="reject-btn" onclick="updateBookingStatus('${booking.id}','Rejected')">Reject</button>
                 </div>
             `;
-        } else if (booking.status === "Accepted") {
-            actionButtons = `
+        }else if(booking.status==="Accepted"){
+            actionButtons=`
                 <button class="complete-btn" onclick="updateBookingStatus('${booking.id}','Completed')">Complete</button>
             `;
-        } else {
-            actionButtons = "-";
+        }else{
+            actionButtons="-";
         }
 
-        row.innerHTML = `
+        row.innerHTML=`
             <td>${booking.id}</td>
-            <td>${booking.customer || "Customer"}</td>
+            <td>${booking.customer||"Customer"}</td>
             <td>${booking.service}</td>
             <td>${booking.date}</td>
             <td>${booking.time}</td>
@@ -423,46 +483,302 @@ function loadProviderDashboard() {
             <td>${actionButtons}</td>
         `;
 
-        providerTableBody.appendChild(row);
+        tableBody.appendChild(row);
     });
 }
 
-function updateBookingStatus(bookingId, newStatus) {
-    let bookings = JSON.parse(localStorage.getItem("techserveBookings")) || [];
+function updateBookingStatus(bookingId,newStatus){
+    let bookings=JSON.parse(localStorage.getItem("techserveBookings"))||[];
 
-    bookings.forEach(function(booking) {
-        if (booking.id === bookingId) {
-            booking.status = newStatus;
+    bookings.forEach(function(booking){
+        if(booking.id===bookingId){
+            booking.status=newStatus;
         }
     });
 
-    localStorage.setItem("techserveBookings", JSON.stringify(bookings));
+    localStorage.setItem("techserveBookings",JSON.stringify(bookings));
 
     loadProviderDashboard();
     loadBookings();
+    loadAdminDashboard();
 
-    alert("Booking status updated to " + newStatus + ".");
+    alert("Booking status updated to "+newStatus+".");
 }
 
-function goToHome() {
-    showSection("home");
+function loadAdminDashboard(){
+    const adminName=document.getElementById("adminName");
+
+    if(adminName){
+        adminName.textContent=localStorage.getItem("techserveUserName")||"Admin";
+    }
+
+    const bookings=JSON.parse(localStorage.getItem("techserveBookings"))||[];
+    const users=JSON.parse(localStorage.getItem("techserveUsers"))||[];
+
+    const totalCustomers=document.getElementById("adminTotalCustomers");
+    const totalProviders=document.getElementById("adminTotalProviders");
+    const totalBookings=document.getElementById("adminTotalBookings");
+    const completedBookings=document.getElementById("adminCompletedBookings");
+
+    const bookingCount=document.getElementById("adminBookingCount");
+    const providerCount=document.getElementById("adminProviderCount");
+    const customerCount=document.getElementById("adminCustomerCount");
+
+    const bookingTable=document.getElementById("adminBookingTableBody");
+    const providerTable=document.getElementById("adminProviderTableBody");
+    const customerTable=document.getElementById("adminCustomerTableBody");
+
+    if(!totalCustomers||!totalProviders||!totalBookings||!completedBookings){
+        return;
+    }
+
+    let customers=0;
+
+    users.forEach(function(user){
+        if(user.role==="customer"){
+            customers++;
+        }
+    });
+
+    const demoCustomers=localStorage.getItem("techserveUsers")?0:1;
+    const customerTotal=customers+demoCustomers;
+
+    const providers=[
+        {
+            name:"Ahmed Khan",
+            service:"Web Developer",
+            location:"Karachi, Pakistan",
+            status:"Active"
+        },
+        {
+            name:"Sara Malik",
+            service:"Graphic Designer",
+            location:"Karachi, Pakistan",
+            status:"Active"
+        },
+        {
+            name:"Usman Ali",
+            service:"Electrician",
+            location:"Karachi, Pakistan",
+            status:"Active"
+        },
+        {
+            name:"Hina Shah",
+            service:"Home Cleaning",
+            location:"Karachi, Pakistan",
+            status:"Active"
+        }
+    ];
+
+    let completed=0;
+
+    bookings.forEach(function(booking){
+        if(booking.status==="Completed"){
+            completed++;
+        }
+    });
+
+    totalCustomers.textContent=customerTotal;
+    totalProviders.textContent=providers.length;
+    totalBookings.textContent=bookings.length;
+    completedBookings.textContent=completed;
+
+    if(bookingCount){
+        bookingCount.textContent=bookings.length+" Bookings";
+    }
+
+    if(providerCount){
+        providerCount.textContent=providers.length+" Providers";
+    }
+
+    if(customerCount){
+        customerCount.textContent=customerTotal+" Customers";
+    }
+
+    if(bookingTable){
+        if(bookings.length===0){
+            bookingTable.innerHTML='<tr><td colspan="6" class="empty-booking">No bookings available yet.</td></tr>';
+        }else{
+            bookingTable.innerHTML="";
+
+            bookings.forEach(function(booking){
+                const row=document.createElement("tr");
+
+                row.innerHTML=`
+                    <td>${booking.id}</td>
+                    <td>${booking.customer||"Customer"}</td>
+                    <td>${booking.service}</td>
+                    <td>${booking.provider}</td>
+                    <td>${booking.date}</td>
+                    <td><span class="status ${booking.status.toLowerCase()}">${booking.status}</span></td>
+                `;
+
+                bookingTable.appendChild(row);
+            });
+        }
+    }
+
+    if(providerTable){
+        providerTable.innerHTML="";
+
+        providers.forEach(function(provider){
+            const row=document.createElement("tr");
+
+            row.innerHTML=`
+                <td>${provider.name}</td>
+                <td>${provider.service}</td>
+                <td>${provider.location}</td>
+                <td><span class="status accepted">${provider.status}</span></td>
+            `;
+
+            providerTable.appendChild(row);
+        });
+    }
+
+    if(customerTable){
+        if(users.length===0){
+            customerTable.innerHTML=`
+                <tr>
+                    <td>Customer</td>
+                    <td>customer@gmail.com</td>
+                    <td>Demo Customer</td>
+                </tr>
+            `;
+        }else{
+            customerTable.innerHTML="";
+
+            users.forEach(function(user){
+                if(user.role==="customer"){
+                    const row=document.createElement("tr");
+
+                    row.innerHTML=`
+                        <td>${user.name}</td>
+                        <td>${user.email}</td>
+                        <td>Customer</td>
+                    `;
+
+                    customerTable.appendChild(row);
+                }
+            });
+        }
+    }
 }
- function openProviderProfile(name,service,location,experience,price){
-    document.getElementById("profileName").textContent=name;
-    document.getElementById("profileService").textContent=service;
-    document.getElementById("profileLocation").textContent=location;
-    document.getElementById("profileExperience").textContent=experience;
-    document.getElementById("profilePrice").textContent=price;
-    document.getElementById("providerProfileModal").classList.add("active");
+
+function showAdminSection(section){
+    const target=document.getElementById("adminDashboard");
+
+    if(!target){
+        return;
+    }
+
+    if(section==="bookings"){
+        const card=document.getElementById("adminBookingTableBody");
+
+        if(card){
+            card.closest(".admin-card").scrollIntoView({
+                behavior:"smooth",
+                block:"start"
+            });
+        }
+    }
+
+    if(section==="providers"){
+        const card=document.getElementById("adminProviderTableBody");
+
+        if(card){
+            card.closest(".admin-card").scrollIntoView({
+                behavior:"smooth",
+                block:"start"
+            });
+        }
+    }
+
+    if(section==="customers"){
+        const card=document.getElementById("adminCustomerTableBody");
+
+        if(card){
+            card.closest(".admin-card").scrollIntoView({
+                behavior:"smooth",
+                block:"start"
+            });
+        }
+    }
+
+    if(section==="services"){
+        alert("Services management will be added next.");
+    }
+
+    if(section==="reviews"){
+        alert("Reviews management will be added next.");
+    }
+
+    if(section==="reports"){
+        alert("Reports section will be added next.");
+    }
+}
+
+function openProviderProfile(name,service,location,experience,price){
+    const profileName=document.getElementById("profileName");
+    const profileService=document.getElementById("profileService");
+    const profileLocation=document.getElementById("profileLocation");
+    const profileExperience=document.getElementById("profileExperience");
+    const profilePrice=document.getElementById("profilePrice");
+    const modal=document.getElementById("providerProfileModal");
+
+    if(profileName){
+        profileName.textContent=name;
+    }
+
+    if(profileService){
+        profileService.textContent=service;
+    }
+
+    if(profileLocation){
+        profileLocation.textContent=location;
+    }
+
+    if(profileExperience){
+        profileExperience.textContent=experience;
+    }
+
+    if(profilePrice){
+        profilePrice.textContent=price;
+    }
+
+    if(modal){
+        modal.classList.add("active");
+    }
 }
 
 function closeProviderProfile(){
-    document.getElementById("providerProfileModal").classList.remove("active");
+    const modal=document.getElementById("providerProfileModal");
+
+    if(modal){
+        modal.classList.remove("active");
+    }
 }
 
 function bookFromProfile(){
-    const provider=document.getElementById("profileName").textContent;
+    const role=localStorage.getItem("techserveRole");
+
+    if(role!=="customer"){
+        closeProviderProfile();
+        alert("Please login as a customer to book a service.");
+        showSection("login");
+        return;
+    }
+
+    const profileName=document.getElementById("profileName");
+    const providerInput=document.getElementById("bookingProvider");
+
+    if(profileName&&providerInput){
+        providerInput.value=profileName.textContent;
+    }
+
     closeProviderProfile();
     openBookingModal();
-    document.getElementById("bookingProvider").value=provider;
+}
+
+function goToHome(){
+    showSection("home");
 }

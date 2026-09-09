@@ -676,6 +676,145 @@
             </div>
         </div>
     </section>
+    <section id="adminDashboard" class="dashboard-section">
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <div>
+                <span class="dashboard-label">ADMIN DASHBOARD</span>
+                <h1>Welcome, <span id="adminName">Admin</span></h1>
+                <p>Manage your TechServe business from one place.</p>
+            </div>
+            <div class="dashboard-actions">
+                <button class="home-btn" onclick="showSection('home')">Home</button>
+                <button class="logout-btn" onclick="logoutUser()">Log out</button>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span>Total Customers</span>
+                <h2 id="adminTotalCustomers">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <span>Total Providers</span>
+                <h2 id="adminTotalProviders">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <span>Total Bookings</span>
+                <h2 id="adminTotalBookings">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <span>Completed Bookings</span>
+                <h2 id="adminCompletedBookings">0</h2>
+            </div>
+        </div>
+
+        <div class="admin-grid">
+            <div class="bookings-card admin-card">
+                <div class="bookings-heading">
+                    <div>
+                        <h2>Recent Bookings</h2>
+                        <p>Manage customer service bookings.</p>
+                    </div>
+                    <span id="adminBookingCount">0 Bookings</span>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Booking ID</th>
+                                <th>Customer</th>
+                                <th>Service</th>
+                                <th>Provider</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminBookingTableBody">
+                            <tr>
+                                <td colspan="6" class="empty-booking">
+                                    No bookings available yet.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="bookings-card admin-card">
+                <div class="bookings-heading">
+                    <div>
+                        <h2>Service Providers</h2>
+                        <p>Manage registered providers.</p>
+                    </div>
+                    <span id="adminProviderCount">0 Providers</span>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Provider</th>
+                                <th>Service</th>
+                                <th>Location</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminProviderTableBody">
+                            <tr>
+                                <td colspan="4" class="empty-booking">
+                                    No providers available yet.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="bookings-card admin-card">
+            <div class="bookings-heading">
+                <div>
+                    <h2>Customers</h2>
+                    <p>View registered TechServe customers.</p>
+                </div>
+                <span id="adminCustomerCount">0 Customers</span>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Customer Name</th>
+                            <th>Email</th>
+                            <th>Account Type</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminCustomerTableBody">
+                        <tr>
+                            <td colspan="3" class="empty-booking">
+                                No customers available yet.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="admin-menu">
+            <button onclick="showAdminSection('bookings')">Bookings</button>
+            <button onclick="showAdminSection('providers')">Providers</button>
+            <button onclick="showAdminSection('customers')">Customers</button>
+            <button onclick="showAdminSection('services')">Services</button>
+            <button onclick="showAdminSection('reviews')">Reviews</button>
+            <button onclick="showAdminSection('reports')">Reports</button>
+        </div>
+    </div>
+</section>
 
     <div id="bookingModal" class="booking-modal">
         <div class="booking-form-box">
