@@ -2001,3 +2001,45 @@ tbody tr:hover {
         padding: 20px 15px;
     }
 }
+/* Dashboard Dark Blue Buttons */
+.dashboard-actions .home-btn {
+    background: #022761;
+    border: 1px solid #022761;
+    color: #ffffff;
+}
+
+.dashboard-actions .home-btn:hover {
+    background: #0b3d8d;
+    border-color: #0b3d8d;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.dashboard-actions .logout-btn {
+    background: #022761;
+    border: 1px solid #022761;
+    color: #ffffff;
+}
+
+.dashboard-actions .logout-btn:hover {
+    background: #0b3d8d;
+    border-color: #0b3d8d;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Provider Dashboard Buttons */
+#providerDashboard .dashboard-actions .home-btn,
+#providerDashboard .dashboard-actions .logout-btn {
+    background: #022761;
+    border-color: #022761;
+    color: #ffffff;
+}
+
+#providerDashboard .dashboard-actions .home-btn:hover,
+#providerDashboard .dashboard-actions .logout-btn:hover {
+    background: #0b3d8d;
+    border-color: #0b3d8d;
+    color: #ffffff;
+    transform: translateY(-2px);
+}

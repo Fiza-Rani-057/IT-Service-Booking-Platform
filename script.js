@@ -447,4 +447,22 @@ function updateBookingStatus(bookingId, newStatus) {
 function goToHome() {
     showSection("home");
 }
+ function openProviderProfile(name,service,location,experience,price){
+    document.getElementById("profileName").textContent=name;
+    document.getElementById("profileService").textContent=service;
+    document.getElementById("profileLocation").textContent=location;
+    document.getElementById("profileExperience").textContent=experience;
+    document.getElementById("profilePrice").textContent=price;
+    document.getElementById("providerProfileModal").classList.add("active");
+}
 
+function closeProviderProfile(){
+    document.getElementById("providerProfileModal").classList.remove("active");
+}
+
+function bookFromProfile(){
+    const provider=document.getElementById("profileName").textContent;
+    closeProviderProfile();
+    openBookingModal();
+    document.getElementById("bookingProvider").value=provider;
+}
