@@ -120,3 +120,16 @@ DOMContentLoaded
 
 Function:Cursor ko us input par le jata hai.
 Example:email.focus();
+
+4. localStorage.setItem()
+
+ Function:LocalStorage mein data save karta hai.
+Example:
+localStorage.setItem("techserveRole", "admin");
+key   = techserveRole
+value = admin
+
+ 5.loginForm.reset()
+
+ Function:Form ki saari entered values clear kar deta hai.
+ Example:loginForm.reset();
