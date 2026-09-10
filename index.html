@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
     <section id="signup" class="auth-section">
         <div class="form-content">
             <h2>Create Account</h2>
@@ -69,7 +68,6 @@
             </div>
         </div>
     </section>
-
     <section id="login" class="auth-section">
         <div class="form-content">
             <h2>Log In to TechServe</h2>
@@ -120,7 +118,6 @@
             </div>
         </div>
     </section>
-
     <section id="home" class="home-section">
         <header class="home-navbar">
             <div class="home-logo">
@@ -139,7 +136,6 @@
                 <button onclick="openUserDashboard()">Dashboard</button>
             </div>
         </header>
-
         <div class="home-hero" id="hero">
             <div class="hero-content">
                 <p class="hero-small">WELCOME TO TECHSERVE</p>
@@ -156,7 +152,6 @@
                 <img src="images/Gemini_Generated_Image_327vnf327vnf327v.jpg" alt="TechServe">
             </div>
         </div>
-
         <div class="services" id="services">
             <div class="section-heading">
                 <p class="section-small">OUR SERVICES</p>
@@ -202,7 +197,6 @@
                 </div>
             </div>
         </div>
-
         <div class="providers" id="providers">
             <div class="section-heading">
                 <p class="section-small">TRUSTED PROFESSIONALS</p>
@@ -223,10 +217,9 @@
                         <span>From Rs. 5,000</span>
                     </div>
                     <button type="button" class="profile-btn"
-                        onclick="openProviderProfile('Ahmed Khan','Web Developer','Karachi, Pakistan','5+ Years','Rs. 5,000')">View
+                        onclick="openProviderProfile('Ahmed Khan','Web Development','Karachi, Pakistan','5+ Years','Rs. 5,000')">View
                         Profile</button>
                 </div>
-
                 <div class="provider-card">
                     <div class="provider-top">
                         <div class="provider-avatar">SM</div>
@@ -240,10 +233,9 @@
                         <span>From Rs. 3,000</span>
                     </div>
                     <button type="button" class="profile-btn"
-                        onclick="openProviderProfile('Sara Malik','Graphic Designer','Lahore, Pakistan','4+ Years','Rs. 3,000')">View
+                        onclick="openProviderProfile('Sara Malik','Graphic Design','Lahore, Pakistan','4+ Years','Rs. 3,000')">View
                         Profile</button>
                 </div>
-
                 <div class="provider-card">
                     <div class="provider-top">
                         <div class="provider-avatar">UA</div>
@@ -257,10 +249,9 @@
                         <span>From Rs. 7,000</span>
                     </div>
                     <button type="button" class="profile-btn"
-                        onclick="openProviderProfile('Usman Ali','Mobile Developer','Islamabad, Pakistan','6+ Years','Rs. 7,000')">View
+                        onclick="openProviderProfile('Usman Ali','Mobile Development','Islamabad, Pakistan','6+ Years','Rs. 7,000')">View
                         Profile</button>
                 </div>
-
                 <div class="provider-card">
                     <div class="provider-top">
                         <div class="provider-avatar">HS</div>
@@ -274,12 +265,11 @@
                         <span>From Rs. 4,000</span>
                     </div>
                     <button type="button" class="profile-btn"
-                        onclick="openProviderProfile('Hina Shah','Digital Marketer','Karachi, Pakistan','3+ Years','Rs. 4,000')">View
+                        onclick="openProviderProfile('Hina Shah','Digital Marketing','Karachi, Pakistan','3+ Years','Rs. 4,000')">View
                         Profile</button>
                 </div>
             </div>
         </div>
-
         <div class="how-it-works" id="how-it-works">
             <div class="section-heading">
                 <p class="section-small">HOW IT WORKS</p>
@@ -313,7 +303,6 @@
                 </div>
             </div>
         </div>
-
         <div class="why-techserve">
             <div class="why-content">
                 <p class="section-small">WHY TECHSERVE?</p>
@@ -350,7 +339,6 @@
                 <p>We connect customers with professionals who care about delivering great results.</p>
             </div>
         </div>
-
         <div class="cta">
             <div class="cta-content">
                 <p class="section-small">GET STARTED TODAY</p>
@@ -363,7 +351,6 @@
                 </div>
             </div>
         </div>
-
         <footer class="footer">
             <div class="footer-container">
                 <div class="footer-about">
@@ -406,7 +393,6 @@
             </div>
         </footer>
     </section>
-
     <section id="contact" class="contact-section">
         <header class="home-navbar">
             <div class="home-logo">
@@ -415,13 +401,9 @@
             </div>
             <nav class="home-nav">
                 <a href="#" onclick="showSection('home');return false;">Home</a>
-                <a href="#"
-                    onclick="showSection('home');setTimeout(function(){document.getElementById('services').scrollIntoView()},100);return false;">Services</a>
-                <a href="#"
-                    onclick="showSection('home');setTimeout(function(){document.getElementById('providers').scrollIntoView()},100);return false;">Providers</a>
-                <a href="#"
-                    onclick="showSection('home');setTimeout(function(){document.getElementById('how-it-works').scrollIntoView()},100);return false;">How
-                    It Works</a>
+                <a href="#" onclick="goHomeTo('services');return false;">Services</a>
+                <a href="#" onclick="goHomeTo('providers');return false;">Providers</a>
+                <a href="#" onclick="goHomeTo('how-it-works');return false;">How It Works</a>
                 <a href="#" class="active">Contact</a>
             </nav>
             <div class="home-buttons">
@@ -429,7 +411,6 @@
                 <button onclick="openUserDashboard()">Dashboard</button>
             </div>
         </header>
-
         <section class="contact-hero">
             <div class="contact-hero-content">
                 <span>GET IN TOUCH</span>
@@ -437,7 +418,6 @@
                 <p>Have a question about our services? Send us a message and our team will be happy to assist you.</p>
             </div>
         </section>
-
         <main class="contact-container">
             <section class="contact-info">
                 <span class="section-label">CONTACT US</span>
@@ -473,7 +453,6 @@
                     </div>
                 </div>
             </section>
-
             <section class="contact-form-card">
                 <div class="form-heading">
                     <span class="section-label">SEND MESSAGE</span>
@@ -485,29 +464,28 @@
                         <div class="form-group">
                             <label for="contactName">Full Name</label>
                             <input type="text" id="contactName" placeholder="Enter your name">
-                            <small id="nameError"></small>
+                            <small id="contactNameError"></small>
                         </div>
                         <div class="form-group">
                             <label for="contactEmail">Email Address</label>
                             <input type="email" id="contactEmail" placeholder="Enter your email">
-                            <small id="emailError"></small>
+                            <small id="contactEmailError"></small>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="contactSubject">Subject</label>
                         <input type="text" id="contactSubject" placeholder="Enter subject">
-                        <small id="subjectError"></small>
+                        <small id="contactSubjectError"></small>
                     </div>
                     <div class="form-group">
                         <label for="contactMessage">Message</label>
                         <textarea id="contactMessage" rows="6" placeholder="Write your message..."></textarea>
-                        <small id="messageError"></small>
+                        <small id="contactMessageError"></small>
                     </div>
                     <button type="submit" class="send-btn">Send Message <i class="fas fa-paper-plane"></i></button>
                 </form>
             </section>
         </main>
-
         <footer class="footer">
             <div class="footer-container">
                 <div class="footer-about">
@@ -527,16 +505,16 @@
                 <div class="footer-links">
                     <h3>Quick Links</h3>
                     <a href="#" onclick="showSection('home');return false;">Home</a>
-                    <a href="#" onclick="showSection('home');return false;">Services</a>
-                    <a href="#" onclick="showSection('home');return false;">Providers</a>
-                    <a href="#" onclick="showSection('home');return false;">How It Works</a>
+                    <a href="#" onclick="goHomeTo('services');return false;">Services</a>
+                    <a href="#" onclick="goHomeTo('providers');return false;">Providers</a>
+                    <a href="#" onclick="goHomeTo('how-it-works');return false;">How It Works</a>
                 </div>
                 <div class="footer-links">
                     <h3>Services</h3>
-                    <a href="#" onclick="showSection('home');return false;">Web Development</a>
-                    <a href="#" onclick="showSection('home');return false;">Graphic Design</a>
-                    <a href="#" onclick="showSection('home');return false;">Mobile Development</a>
-                    <a href="#" onclick="showSection('home');return false;">Digital Marketing</a>
+                    <a href="#" onclick="goHomeTo('services');return false;">Web Development</a>
+                    <a href="#" onclick="goHomeTo('services');return false;">Graphic Design</a>
+                    <a href="#" onclick="goHomeTo('services');return false;">Mobile Development</a>
+                    <a href="#" onclick="goHomeTo('services');return false;">Digital Marketing</a>
                 </div>
                 <div class="footer-contact">
                     <h3>Contact Us</h3>
@@ -550,7 +528,6 @@
             </div>
         </footer>
     </section>
-
     <section id="dashboard" class="dashboard-section">
         <div class="dashboard-container">
             <div class="dashboard-header">
@@ -564,7 +541,6 @@
                     <button class="logout-btn" onclick="logoutUser()">Logout</button>
                 </div>
             </div>
-
             <div class="dashboard-stats">
                 <div class="stat-card"><span>Total Bookings</span>
                     <h2 id="totalBookings">0</h2>
@@ -579,7 +555,6 @@
                     <h2 id="completedBookings">0</h2>
                 </div>
             </div>
-
             <div class="bookings-card">
                 <div class="bookings-heading">
                     <div>
@@ -613,7 +588,6 @@
             </div>
         </div>
     </section>
-
     <section id="providerDashboard" class="dashboard-section">
         <div class="dashboard-container">
             <div class="dashboard-header">
@@ -627,7 +601,6 @@
                     <button class="logout-btn" onclick="logoutUser()">Logout</button>
                 </div>
             </div>
-
             <div class="dashboard-stats">
                 <div class="stat-card"><span>Total Requests</span>
                     <h2 id="providerTotalBookings">0</h2>
@@ -642,7 +615,6 @@
                     <h2 id="providerCompletedBookings">0</h2>
                 </div>
             </div>
-
             <div class="bookings-card">
                 <div class="bookings-heading">
                     <div>
@@ -689,29 +661,20 @@
                     <button class="logout-btn" onclick="logoutUser()">Log out</button>
                 </div>
             </div>
-
             <div class="stats-grid">
-                <div class="stat-card">
-                    <span>Total Customers</span>
+                <div class="stat-card"><span>Total Customers</span>
                     <h2 id="adminTotalCustomers">0</h2>
                 </div>
-
-                <div class="stat-card">
-                    <span>Total Providers</span>
+                <div class="stat-card"><span>Total Providers</span>
                     <h2 id="adminTotalProviders">0</h2>
                 </div>
-
-                <div class="stat-card">
-                    <span>Total Bookings</span>
+                <div class="stat-card"><span>Total Bookings</span>
                     <h2 id="adminTotalBookings">0</h2>
                 </div>
-
-                <div class="stat-card">
-                    <span>Completed Bookings</span>
+                <div class="stat-card"><span>Completed Bookings</span>
                     <h2 id="adminCompletedBookings">0</h2>
                 </div>
             </div>
-
             <div class="admin-grid">
                 <div class="bookings-card admin-card">
                     <div class="bookings-heading">
@@ -721,7 +684,6 @@
                         </div>
                         <span id="adminBookingCount">0 Bookings</span>
                     </div>
-
                     <div class="table-container">
                         <table>
                             <thead>
@@ -736,15 +698,12 @@
                             </thead>
                             <tbody id="adminBookingTableBody">
                                 <tr>
-                                    <td colspan="6" class="empty-booking">
-                                        No bookings available yet.
-                                    </td>
+                                    <td colspan="6" class="empty-booking">No bookings available yet.</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-
                 <div class="bookings-card admin-card">
                     <div class="bookings-heading">
                         <div>
@@ -753,7 +712,6 @@
                         </div>
                         <span id="adminProviderCount">0 Providers</span>
                     </div>
-
                     <div class="table-container">
                         <table>
                             <thead>
@@ -766,16 +724,13 @@
                             </thead>
                             <tbody id="adminProviderTableBody">
                                 <tr>
-                                    <td colspan="4" class="empty-booking">
-                                        No providers available yet.
-                                    </td>
+                                    <td colspan="4" class="empty-booking">No providers available yet.</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
-
             <div class="bookings-card admin-card">
                 <div class="bookings-heading">
                     <div>
@@ -784,7 +739,6 @@
                     </div>
                     <span id="adminCustomerCount">0 Customers</span>
                 </div>
-
                 <div class="table-container">
                     <table>
                         <thead>
@@ -796,25 +750,14 @@
                         </thead>
                         <tbody id="adminCustomerTableBody">
                             <tr>
-                                <td colspan="3" class="empty-booking">
-                                    No customers available yet.
-                                </td>
+                                <td colspan="3" class="empty-booking">No customers available yet.</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-            <div class="admin-menu">
-                <button onclick="showAdminSection('bookings')">Bookings</button>
-                <button onclick="showAdminSection('providers')">Providers</button>
-                <button onclick="showAdminSection('customers')">Customers</button>
-                <button onclick="showAdminSection('services')">Services</button>
-                <button onclick="showAdminSection('reviews')">Reviews</button>
-                <button onclick="showAdminSection('reports')">Reports</button>
-            </div>
         </div>
     </section>
-
     <div id="bookingModal" class="booking-modal">
         <div class="booking-form-box">
             <button class="close-booking" onclick="closeBookingModal()">&times;</button>
@@ -831,10 +774,10 @@
                             <option value="">Select Service</option>
                             <option value="Web Development">Web Development</option>
                             <option value="Graphic Design">Graphic Design</option>
+                            <option value="Mobile Development">Mobile Development</option>
                             <option value="Digital Marketing">Digital Marketing</option>
-                            <option value="IT Support">IT Support</option>
-                            <option value="Content Writing">Content Writing</option>
-                            <option value="Mobile App Development">Mobile App Development</option>
+                            <option value="Photography">Photography</option>
+                            <option value="Home Services">Home Services</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -865,7 +808,6 @@
             </form>
         </div>
     </div>
-
     <div id="providerProfileModal" class="booking-modal">
         <div class="booking-form-box">
             <button class="close-booking" onclick="closeProviderProfile()">&times;</button>
@@ -882,7 +824,6 @@
             <button type="button" class="confirm-booking-btn" onclick="bookFromProfile()">Book Now</button>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 

@@ -1,12 +1,9 @@
 function showSection(sectionId){
     const sections=document.querySelectorAll("body > section");
-
     sections.forEach(function(section){
         section.style.display="none";
     });
-
     const targetSection=document.getElementById(sectionId);
-
     if(targetSection){
         if(sectionId==="login"||sectionId==="signup"){
             targetSection.style.display="flex";
@@ -19,8 +16,21 @@ function showSection(sectionId){
         behavior:"smooth"
     });
 }
-document.addEventListener("DOMContentLoaded",function(){
 
+function goHomeTo(sectionId){
+    showSection("home");
+    setTimeout(function(){
+        const target=document.getElementById(sectionId);
+        if(target){
+            target.scrollIntoView({
+                behavior:"smooth",
+                block:"start"
+            });
+        }
+    },100);
+}
+
+document.addEventListener("DOMContentLoaded",function(){
     showSection("login");
 
     const loginForm=document.getElementById("loginForm");
@@ -32,7 +42,7 @@ document.addEventListener("DOMContentLoaded",function(){
         loginForm.addEventListener("submit",function(event){
             event.preventDefault();
 
-            const emailVal=email.value.trim();
+            const emailVal=email.value.trim().toLowerCase();
             const passVal=password.value.trim();
 
             if(emailVal===""){
@@ -51,7 +61,6 @@ document.addEventListener("DOMContentLoaded",function(){
                 localStorage.setItem("techserveRole","admin");
                 localStorage.setItem("techserveUserEmail",emailVal);
                 localStorage.setItem("techserveUserName","Admin");
-
                 loginForm.reset();
                 showSection("home");
                 return;
@@ -61,7 +70,6 @@ document.addEventListener("DOMContentLoaded",function(){
                 localStorage.setItem("techserveRole","provider");
                 localStorage.setItem("techserveUserEmail",emailVal);
                 localStorage.setItem("techserveUserName","Provider");
-
                 loginForm.reset();
                 showSection("home");
                 return;
@@ -71,18 +79,16 @@ document.addEventListener("DOMContentLoaded",function(){
                 localStorage.setItem("techserveRole","customer");
                 localStorage.setItem("techserveUserEmail",emailVal);
                 localStorage.setItem("techserveUserName","Customer");
-
                 loginForm.reset();
                 showSection("home");
                 return;
             }
 
             const users=JSON.parse(localStorage.getItem("techserveUsers"))||[];
-
             let foundUser=null;
 
             users.forEach(function(user){
-                if(user.email===emailVal&&user.password===passVal){
+                if(user.email.toLowerCase()===emailVal&&user.password===passVal){
                     foundUser=user;
                 }
             });
@@ -91,7 +97,6 @@ document.addEventListener("DOMContentLoaded",function(){
                 localStorage.setItem("techserveRole",foundUser.role);
                 localStorage.setItem("techserveUserEmail",foundUser.email);
                 localStorage.setItem("techserveUserName",foundUser.name);
-
                 loginForm.reset();
                 showSection("home");
                 return;
@@ -104,9 +109,7 @@ document.addEventListener("DOMContentLoaded",function(){
     if(togglePassword&&password){
         togglePassword.addEventListener("click",function(){
             const isPassword=password.type==="password";
-
             password.type=isPassword?"text":"password";
-
             this.classList.toggle("fa-eye",!isPassword);
             this.classList.toggle("fa-eye-slash",isPassword);
         });
@@ -119,7 +122,7 @@ document.addEventListener("DOMContentLoaded",function(){
             event.preventDefault();
 
             const name=document.getElementById("signupName").value.trim();
-            const signupEmail=document.getElementById("signupEmail").value.trim();
+            const signupEmail=document.getElementById("signupEmail").value.trim().toLowerCase();
             const signupPassword=document.getElementById("signupPassword").value;
             const confirmPassword=document.getElementById("confirmPassword").value;
 
@@ -139,16 +142,15 @@ document.addEventListener("DOMContentLoaded",function(){
             }
 
             let users=JSON.parse(localStorage.getItem("techserveUsers"))||[];
-
             let existingUser=false;
 
             users.forEach(function(user){
-                if(user.email===signupEmail){
+                if(user.email.toLowerCase()===signupEmail){
                     existingUser=true;
                 }
             });
 
-            if(existingUser){
+            if(existingUser||signupEmail==="admin@gmail.com"||signupEmail==="provider@gmail.com"||signupEmail==="customer@gmail.com"){
                 alert("An account with this email already exists.");
                 return;
             }
@@ -161,15 +163,13 @@ document.addEventListener("DOMContentLoaded",function(){
             };
 
             users.push(newUser);
-
             localStorage.setItem("techserveUsers",JSON.stringify(users));
             localStorage.setItem("techserveRole","customer");
             localStorage.setItem("techserveUserEmail",signupEmail);
             localStorage.setItem("techserveUserName",name);
 
-            alert("Account created successfully!");
-
             signupForm.reset();
+            alert("Account created successfully!");
             showSection("home");
         });
     }
@@ -184,11 +184,36 @@ document.addEventListener("DOMContentLoaded",function(){
         });
     }
 
+    const providerProfileModal=document.getElementById("providerProfileModal");
+
+    if(providerProfileModal){
+        providerProfileModal.addEventListener("click",function(event){
+            if(event.target===providerProfileModal){
+                closeProviderProfile();
+            }
+        });
+    }
+
+    const bookingDate=document.getElementById("bookingDate");
+
+    if(bookingDate){
+        const today=new Date().toISOString().split("T")[0];
+        bookingDate.min=today;
+    }
+
     const bookingForm=document.getElementById("bookingForm");
 
     if(bookingForm){
         bookingForm.addEventListener("submit",function(event){
             event.preventDefault();
+
+            const role=localStorage.getItem("techserveRole");
+
+            if(role!=="customer"){
+                alert("Please login as a customer to create a booking.");
+                closeBookingModal();
+                return;
+            }
 
             const service=document.getElementById("bookingService").value;
             const provider=document.getElementById("bookingProvider").value.trim();
@@ -241,9 +266,7 @@ document.addEventListener("DOMContentLoaded",function(){
             };
 
             let bookings=JSON.parse(localStorage.getItem("techserveBookings"))||[];
-
             bookings.push(booking);
-
             localStorage.setItem("techserveBookings",JSON.stringify(bookings));
 
             bookingForm.reset();
@@ -253,6 +276,27 @@ document.addEventListener("DOMContentLoaded",function(){
             loadAdminDashboard();
 
             alert("Booking created successfully!\nBooking ID: "+booking.id);
+        });
+    }
+
+    const contactForm=document.getElementById("contactForm");
+
+    if(contactForm){
+        contactForm.addEventListener("submit",function(event){
+            event.preventDefault();
+
+            const name=document.getElementById("contactName").value.trim();
+            const email=document.getElementById("contactEmail").value.trim();
+            const subject=document.getElementById("contactSubject").value.trim();
+            const message=document.getElementById("contactMessage").value.trim();
+
+            if(name===""||email===""||subject===""||message===""){
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            alert("Your message has been sent successfully!");
+            contactForm.reset();
         });
     }
 
@@ -283,7 +327,6 @@ function logoutUser(){
     localStorage.removeItem("techserveRole");
     localStorage.removeItem("techserveUserEmail");
     localStorage.removeItem("techserveUserName");
-
     showSection("login");
 }
 
@@ -291,8 +334,8 @@ function loadDashboard(){
     const userName=localStorage.getItem("techserveUserName");
     const dashboardName=document.getElementById("dashboardName");
 
-    if(dashboardName&&userName){
-        dashboardName.textContent=userName;
+    if(dashboardName){
+        dashboardName.textContent=userName||"Customer";
     }
 
     loadBookings();
@@ -303,6 +346,7 @@ function openBookingModal(){
 
     if(role!=="customer"){
         alert("Please login as a customer to create a booking.");
+        showSection("login");
         return;
     }
 
@@ -338,7 +382,7 @@ function loadBookings(){
     const currentEmail=localStorage.getItem("techserveUserEmail");
     const role=localStorage.getItem("techserveRole");
 
-    let customerBookings=bookings;
+    let customerBookings=[];
 
     if(role==="customer"){
         customerBookings=bookings.filter(function(booking){
@@ -453,7 +497,6 @@ function loadProviderDashboard(){
 
     bookings.forEach(function(booking){
         const row=document.createElement("tr");
-
         let actionButtons="";
 
         if(booking.status==="Pending"){
@@ -530,16 +573,11 @@ function loadAdminDashboard(){
         return;
     }
 
-    let customers=0;
-
-    users.forEach(function(user){
-        if(user.role==="customer"){
-            customers++;
-        }
+    const registeredCustomers=users.filter(function(user){
+        return user.role==="customer";
     });
 
-    const demoCustomers=localStorage.getItem("techserveUsers")?0:1;
-    const customerTotal=customers+demoCustomers;
+    const customerTotal=registeredCustomers.length;
 
     const providers=[
         {
@@ -551,18 +589,18 @@ function loadAdminDashboard(){
         {
             name:"Sara Malik",
             service:"Graphic Designer",
-            location:"Karachi, Pakistan",
+            location:"Lahore, Pakistan",
             status:"Active"
         },
         {
             name:"Usman Ali",
-            service:"Electrician",
-            location:"Karachi, Pakistan",
+            service:"Mobile Developer",
+            location:"Islamabad, Pakistan",
             status:"Active"
         },
         {
             name:"Hina Shah",
-            service:"Home Cleaning",
+            service:"Digital Marketer",
             location:"Karachi, Pakistan",
             status:"Active"
         }
@@ -634,7 +672,7 @@ function loadAdminDashboard(){
     }
 
     if(customerTable){
-        if(users.length===0){
+        if(registeredCustomers.length===0){
             customerTable.innerHTML=`
                 <tr>
                     <td>Customer</td>
@@ -645,73 +683,18 @@ function loadAdminDashboard(){
         }else{
             customerTable.innerHTML="";
 
-            users.forEach(function(user){
-                if(user.role==="customer"){
-                    const row=document.createElement("tr");
+            registeredCustomers.forEach(function(user){
+                const row=document.createElement("tr");
 
-                    row.innerHTML=`
-                        <td>${user.name}</td>
-                        <td>${user.email}</td>
-                        <td>Customer</td>
-                    `;
+                row.innerHTML=`
+                    <td>${user.name}</td>
+                    <td>${user.email}</td>
+                    <td>Customer</td>
+                `;
 
-                    customerTable.appendChild(row);
-                }
+                customerTable.appendChild(row);
             });
         }
-    }
-}
-
-function showAdminSection(section){
-    const target=document.getElementById("adminDashboard");
-
-    if(!target){
-        return;
-    }
-
-    if(section==="bookings"){
-        const card=document.getElementById("adminBookingTableBody");
-
-        if(card){
-            card.closest(".admin-card").scrollIntoView({
-                behavior:"smooth",
-                block:"start"
-            });
-        }
-    }
-
-    if(section==="providers"){
-        const card=document.getElementById("adminProviderTableBody");
-
-        if(card){
-            card.closest(".admin-card").scrollIntoView({
-                behavior:"smooth",
-                block:"start"
-            });
-        }
-    }
-
-    if(section==="customers"){
-        const card=document.getElementById("adminCustomerTableBody");
-
-        if(card){
-            card.closest(".admin-card").scrollIntoView({
-                behavior:"smooth",
-                block:"start"
-            });
-        }
-    }
-
-    if(section==="services"){
-        alert("Services management will be added next.");
-    }
-
-    if(section==="reviews"){
-        alert("Reviews management will be added next.");
-    }
-
-    if(section==="reports"){
-        alert("Reports section will be added next.");
     }
 }
 
@@ -767,10 +750,23 @@ function bookFromProfile(){
     }
 
     const profileName=document.getElementById("profileName");
+    const profileService=document.getElementById("profileService");
     const providerInput=document.getElementById("bookingProvider");
+    const serviceSelect=document.getElementById("bookingService");
 
     if(profileName&&providerInput){
         providerInput.value=profileName.textContent;
+    }
+
+    if(profileService&&serviceSelect){
+        const service=profileService.textContent;
+
+        for(let i=0;i<serviceSelect.options.length;i++){
+            if(serviceSelect.options[i].value===service){
+                serviceSelect.value=service;
+                break;
+            }
+        }
     }
 
     closeProviderProfile();
