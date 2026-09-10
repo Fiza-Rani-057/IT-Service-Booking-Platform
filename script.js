@@ -235,7 +235,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    
+
+   ////////Sixth block
 
     /* BOOKING MODAL */
     const bookingModal = document.getElementById("bookingModal");
@@ -247,7 +248,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-
     /* PROVIDER PROFILE MODAL */
     const providerProfileModal = document.getElementById("providerProfileModal");
 
