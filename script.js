@@ -235,6 +235,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    
+
     /* BOOKING MODAL */
     const bookingModal = document.getElementById("bookingModal");
 
