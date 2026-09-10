@@ -65,3 +65,34 @@ Function: Function ko wahin rok deta hai.
 
  Function: localStorage se specific saved data delete karta hai.
  Example:localStorage.removeItem("techserveRole");
+
+ Third Block ka Flow:::
+ Delete Account
+↓
+confirm()
+↓
+Cancel? → return → stop
+Yes?
+↓
+User email nikalo
+↓
+Users array lao
+↓
+filter() se current user remove
+↓
+Updated array localStorage mein save
+↓
+removeItem() se login data delete
+↓
+Signup page
+
+========3rd Block Imp Points========
+
+confirm()
+→ user se confirmation leta hai.
+
+return
+→ function ko wahi stop kar deta hai.
+
+removeItem()
+→ localStorage se saved item delete karta hai.
