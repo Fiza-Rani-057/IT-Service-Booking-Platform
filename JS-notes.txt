@@ -2,7 +2,7 @@
 
 1. querySelectorAll()
 
-Function: Multiple elements select karta hai.
+ Function: Multiple elements select karta hai.
  Example:const buttons = document.querySelectorAll("button");
 
  2. forEach()
@@ -10,5 +10,13 @@ Function: Multiple elements select karta hai.
  Function: Selected items par one-by-one kaam karta hai.
  Example:buttons.forEach(function(button) {
     button.style.display = "none";
+});
+
+ 3. window.scrollTo
+ Function: Page ko kisi specific position par le jata hai.
+
+ window.scrollTo({
+    top: 0,
+    behavior: "smooth"
 });
 
