@@ -102,3 +102,21 @@ return
 
 removeItem()
 → localStorage se saved item delete karta hai.
+
+DOMContentLoaded
+ → Jab HTML page poora load ho jaye, tab andar wala function chalata hai.
+
+======Forth Block======
+1. .value
+
+ Function:Input ke andar jo user ne likha hai, woh nikalta hai.
+ Example:const emailVal = email.value;
+ 2. .trim()
+
+ Function:Start/end ki extra spaces hata deta hai.
+ Example:email.value.trim()
+
+ 3. .focus()
+
+Function:Cursor ko us input par le jata hai.
+Example:email.focus();

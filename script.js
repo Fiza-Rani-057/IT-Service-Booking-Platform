@@ -71,7 +71,7 @@ function deleteAccount() {
 document.addEventListener("DOMContentLoaded", function () {
 
     showSection("login");
-
+  ///Forth Block
     /* LOGIN */
     const loginForm = document.getElementById("loginForm");
     const email = document.getElementById("email");
@@ -139,7 +139,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             alert("Invalid email or password. Please try again.");
         });
-    }
+    }  
+
+    ///Fifth Block
 
     /* PASSWORD SHOW / HIDE */
     if (togglePassword && password) {
