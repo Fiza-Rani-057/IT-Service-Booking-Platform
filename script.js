@@ -111,17 +111,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 showSection("home");
                 return;
             }
-
-            if (emailVal === "customer@gmail.com" && passVal === "customer123") {
-                localStorage.setItem("techserveRole", "customer");
-                localStorage.setItem("techserveUserEmail", emailVal);
-                localStorage.setItem("techserveUserName", "Customer");
-
-                loginForm.reset();
-                showSection("home");
-                return;
-            }
-
             const users = JSON.parse(localStorage.getItem("techserveUsers")) || [];
             let foundUser = null;
 
