@@ -193,8 +193,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 alert("Passwords do not match.");
                 return;
             }
-  // Stringify = JS data ko save karne layak string banana.
-   // Parse = saved string ko wapas JS data banana.
+
             let users = JSON.parse(localStorage.getItem("techserveUsers")) || [];
             let existingUser = false;
 
