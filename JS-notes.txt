@@ -29,3 +29,21 @@ Example:
 setTimeout(function () {
     alert("Hello");
 }, 100);
+
+ Is code ka flow:
+goHomeTo("services")
+↓
+Home show
+↓
+100ms wait
+↓
+Services section find
+↓
+Services tak smooth scroll
+
+setTimeout()
+→ code ko kuch time baad chalata hai.
+
+scrollIntoView()
+→ kisi specific element tak scroll karta hai.
+
