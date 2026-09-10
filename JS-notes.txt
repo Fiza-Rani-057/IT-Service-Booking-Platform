@@ -155,7 +155,7 @@ foundUser = null
 foundUser = user object
 → true
  =======4th block ka flow============
- 
+
 Submit
 ↓
 value se email/password lo
@@ -186,3 +186,58 @@ Home show
 .reset() → form clear
 foundUser → matching user store
 if(foundUser) → check user mila ya nahi
+
+ ============5th Block===========
+1. classList.remove()
+
+ Function:class Remove krna 
+ Example:this.classList.remove("fa-eye");
+→ fa-eye class hata di.
+
+2. classList.add()
+
+ Function:class addkrna 
+ Example:this.classList.add("fa-eye-slash");
+→ fa-eye-slash class add ho gayi.
+
+Flow:
+Eye click
+↓
+fa-eye remove
+↓
+fa-eye-slash add
+
+3. password.type
+
+ Function:Input ka type change/check karta hai.
+ Example:password.type = "text";
+→ password visible
+password.type = "password";
+→ password hidden
+
+4. .length
+
+ Function:String ke andar kitne characters hain, woh batata hai.
+ Example:signupPassword.length
+
+"abc123"
+length → 6
+5. !==
+
+Equal nahi hai check karta hai.
+signupPassword !== confirmPassword
+→ dono passwords different hain?
+
+6. users.push(newUser)
+
+newUser Object
+↓
+push()
+↓
+users Array mein add
+Notes mein sirf ye add karo:
+classList.remove() → CSS class remove
+classList.add() → CSS class add
+password.type → input type change/check
+length → characters ki counting
+!== → equal nahi hai
