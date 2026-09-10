@@ -1,4 +1,4 @@
-/// First Block
+=========First Block===========
 
 1. querySelectorAll()
 
@@ -20,3 +20,12 @@
     behavior: "smooth"
 });
 
+==========Second Block ===========
+ 1. setTimeout()
+
+Function: Code ko thori der baad chalata hai.
+
+Example:
+setTimeout(function () {
+    alert("Hello");
+}, 100);

@@ -1,3 +1,5 @@
+//First Block
+
 function showSection(sectionId) {
     const sections = document.querySelectorAll("body > section");
 
@@ -20,6 +22,8 @@ function showSection(sectionId) {
         behavior: "smooth"
     });
 }
+
+//  Second block 
 
 function goHomeTo(sectionId) {
     showSection("home");
