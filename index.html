@@ -528,66 +528,79 @@
             </div>
         </footer>
     </section>
-    <section id="dashboard" class="dashboard-section">
-        <div class="dashboard-container">
-            <div class="dashboard-header">
-                <div>
-                    <span class="dashboard-label">CUSTOMER DASHBOARD</span>
-                    <h1>Welcome, <span id="dashboardName">Customer</span></h1>
-                    <p>Manage your bookings and service requests from one place.</p>
-                </div>
-                <div class="dashboard-actions">
-                    <button class="home-btn" onclick="showSection('home')">Back to Home</button>
-                    <button class="logout-btn" onclick="logoutUser()">Logout</button>
-                </div>
+   <section id="dashboard" class="dashboard-section">
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <div>
+                <span class="dashboard-label">CUSTOMER DASHBOARD</span>
+                <h1>Welcome, <span id="dashboardName">Customer</span></h1>
+                <p>Manage your bookings and service requests from one place.</p>
             </div>
-            <div class="dashboard-stats">
-                <div class="stat-card"><span>Total Bookings</span>
-                    <h2 id="totalBookings">0</h2>
-                </div>
-                <div class="stat-card"><span>Pending</span>
-                    <h2 id="pendingBookings">0</h2>
-                </div>
-                <div class="stat-card"><span>Accepted</span>
-                    <h2 id="acceptedBookings">0</h2>
-                </div>
-                <div class="stat-card"><span>Completed</span>
-                    <h2 id="completedBookings">0</h2>
-                </div>
-            </div>
-            <div class="bookings-card">
-                <div class="bookings-heading">
-                    <div>
-                        <h2>Recent Bookings</h2>
-                        <p>Track your latest service requests.</p>
-                    </div>
-                    <div class="booking-actions">
-                        <span id="bookingCount">0 Bookings</span>
-                        <button class="new-booking-btn" onclick="openBookingModal()">+ New Booking</button>
-                    </div>
-                </div>
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Booking ID</th>
-                                <th>Service</th>
-                                <th>Provider</th>
-                                <th>Date</th>
-                                <th>Time</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody id="bookingTableBody">
-                            <tr>
-                                <td colspan="6" class="empty-booking">No bookings available yet.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="dashboard-actions">
+                <button class="home-btn" onclick="showSection('home')">Back to Home</button>
+                <button class="logout-btn" onclick="logoutUser()">Logout</button>
+                <button class="delete-btn" onclick="deleteAccount()">Delete Account</button>
             </div>
         </div>
-    </section>
+
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <span>Total Bookings</span>
+                <h2 id="totalBookings">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <span>Pending</span>
+                <h2 id="pendingBookings">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <span>Accepted</span>
+                <h2 id="acceptedBookings">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <span>Completed</span>
+                <h2 id="completedBookings">0</h2>
+            </div>
+        </div>
+
+        <div class="bookings-card">
+            <div class="bookings-heading">
+                <div>
+                    <h2>Recent Bookings</h2>
+                    <p>Track your latest service requests.</p>
+                </div>
+
+                <div class="booking-actions">
+                    <span id="bookingCount">0 Bookings</span>
+                    <button class="new-booking-btn" onclick="openBookingModal()">+ New Booking</button>
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Booking ID</th>
+                            <th>Service</th>
+                            <th>Provider</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="bookingTableBody">
+                        <tr>
+                            <td colspan="6" class="empty-booking">No bookings available yet.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
     <section id="providerDashboard" class="dashboard-section">
         <div class="dashboard-container">
             <div class="dashboard-header">

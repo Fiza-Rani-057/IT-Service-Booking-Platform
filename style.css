@@ -2371,3 +2371,16 @@ tbody tr:hover {
         flex: 1;
     }
 }
+.delete-btn {
+    background: #dc2626;
+    color: #ffffff;
+    border: none;
+    padding: 11px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.delete-btn:hover {
+    background: #b91c1c;
+}
