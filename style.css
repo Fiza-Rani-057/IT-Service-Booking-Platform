@@ -2372,7 +2372,7 @@ tbody tr:hover {
     }
 }
 .delete-btn {
-    background: #dc2626;
+    background: #093063;
     color: #ffffff;
     border: none;
     padding: 11px 18px;
@@ -2382,5 +2382,5 @@ tbody tr:hover {
 }
 
 .delete-btn:hover {
-    background: #b91c1c;
+    background: #05408d;
 }
