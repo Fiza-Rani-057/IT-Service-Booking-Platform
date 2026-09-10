@@ -40,6 +40,7 @@ function goHomeTo(sectionId) {
     }, 100);
 }
 
+ // Third Block 
 /* DELETE ACCOUNT */
 function deleteAccount() {
     const confirmDelete = confirm("Are you sure you want to delete your account?");

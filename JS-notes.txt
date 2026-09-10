@@ -47,3 +47,21 @@ setTimeout()
 scrollIntoView()
 → kisi specific element tak scroll karta hai.
 
+  ==============Third Block============
+
+  1. confirm()
+
+Function: User se Yes/No confirmation leta hai.
+ Example: const result = confirm("Delete account?");
+
+2. return
+
+Function: Function ko wahin rok deta hai.
+  Example : if (!confirmDelete) {
+    return;
+}
+
+ 3. localStorage.removeItem()
+
+ Function: localStorage se specific saved data delete karta hai.
+ Example:localStorage.removeItem("techserveRole");
