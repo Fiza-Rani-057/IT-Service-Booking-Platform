@@ -258,7 +258,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-
+    
     /* BOOKING DATE */
     const bookingDate = document.getElementById("bookingDate");
 
