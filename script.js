@@ -133,7 +133,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     foundUser = user;
                 }
             });
-
             if (foundUser) {
                 localStorage.setItem("techserveRole", foundUser.role);
                 localStorage.setItem("techserveUserEmail", foundUser.email);
