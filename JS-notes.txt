@@ -133,3 +133,56 @@ value = admin
 
  Function:Form ki saari entered values clear kar deta hai.
  Example:loginForm.reset();
+
+ 6.foundUser = null
+
+ Function:Pehle assume karte hain ke koi user nahi mila.
+
+ Example:let foundUser = null;
+ Baad mein matching user mile:
+  foundUser = user;
+
+  7.if (foundUser)
+
+ Function:Check karta hai ke user mila ya nahi.
+
+Example: if (foundUser) {
+    ...
+}
+foundUser = null
+→ false
+
+foundUser = user object
+→ true
+ =======4th block ka flow============
+ 
+Submit
+↓
+value se email/password lo
+↓
+trim() se extra spaces hatao
+↓
+empty hain? → alert + focus()
+↓
+Admin check
+↓
+Provider check
+↓
+users array se matching user dhoondo
+↓
+foundUser mila?
+↓
+localStorage mein user ki info save
+↓
+form reset
+↓
+Home show
+
+ Code k Imp Points::
+.value → input ki value leta hai
+.trim() → extra spaces remove
+.focus() → cursor input par le aata hai
+.setItem() → localStorage mein save
+.reset() → form clear
+foundUser → matching user store
+if(foundUser) → check user mila ya nahi
