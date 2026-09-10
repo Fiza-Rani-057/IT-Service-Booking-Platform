@@ -60,8 +60,14 @@ Function: Function ko wahin rok deta hai.
   Example : if (!confirmDelete) {
     return;
 }
+ 3.DOMContentLoaded
+document.addEventListener("DOMContentLoaded", function () {
+    showSection("login");
+});
 
- 3. localStorage.removeItem()
+Function: Jab HTML page poora load ho jaye, tab andar wala function chalata hai.
+
+ 4. localStorage.removeItem()
 
  Function: localStorage se specific saved data delete karta hai.
  Example:localStorage.removeItem("techserveRole");
